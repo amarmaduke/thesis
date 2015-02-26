@@ -1,0 +1,15 @@
+BBox improvement:
+gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox .
+
+Like the reference, except greater ability to crumple along the edges,
+fiber folding in on itself. Perhaps crumple is the wrong word.
+With just pushing straight down the folds are pretty similar.
+Pushing with a slant allows the fiber to fold against itself creating
+one to many folds. Expands the edges of "totally flat"
+
+
+
+Figure sindex's:
+crumple : 259
+crumple2 : 284
+crumple3" 248

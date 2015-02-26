@@ -1,0 +1,11 @@
+BBox improvement:
+gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox .
+
+
+Seemingly the same as the reference plot, however there is a darker
+contrast along the "stem" of the white. It looks like similar cases
+to the kinks below, i.e. easier for fibers to bind to themselves
+instead of being stretched out flat along the bottom
+
+Figure sindex's
+kink : 278
