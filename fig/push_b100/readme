@@ -1,0 +1,10 @@
+BBox improvement:
+gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox .
+
+
+More curved kinks, as expected
+
+Figure sindex's:
+high_mag : 228
+high_mag_angled : 258
+low_mag : 222

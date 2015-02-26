@@ -1,0 +1,16 @@
+BBox improvement:
+gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox .
+
+
+When the angle applied is more diagonal, you get squished (black area)
+As you get closer to pushing directly down you find more folds
+Greater magnitude leads to more squishing (curled2)
+As you go away from direct downard pressure you get varying kinks
+
+
+Figure sindex's:
+squished : 344
+one_fold : 292
+curled1 : 223
+cureld2 : 228
+two_folds : 298

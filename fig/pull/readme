@@ -1,0 +1,6 @@
+BBox improvement:
+gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox .
+
+I believe:
+	either it can break everything, or it can't.
+	Does it do the unzipping thing on the edges?... Not sure

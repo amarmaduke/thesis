@@ -1,0 +1,12 @@
+\chapter{Introduction to CUDA} \label{ap:a}
+
+
+CUDA is a propriety architecture developed by nVIDIA. The purpose of CUDA is to pioneer the concept of general purpose graphical processing units (GPGPUs). CUDA offers an interface and structure to abstract away the hardware of nVIDIA GPU architectures in order for a programmer to more readily developed for a GPU. The benefit of a parallel speed up is quite obvious for any application with sufficient throughput potential.
+
+That is, if we imagine the CPU has one capable and intricate shoveller, then the GPU can be visualized as hundreds or even thousands of very dumb shovellers. It is not hard from this analogy to gain insight into many advantages and disadvantages on both architectures. For instance, the CPU is much better at tasks that are interdependent or require a complex control structure, the smart shoveller is capable of handling and remembering complicated sequences of tasks that are conditional dependent on prior ones. In contrast, the GPU is significantly better at simplified tasks. If the programmer can accurately express her problem in terms of a sequence of non-conditional dependent tasks, then a dumb shoveller will be able to remember and executed those tasks in a timely fashion.
+
+Imagine the task where either the CPU or the GPU must recreate a piece of artwork out of varying levels of indentation into a plot of land. The GPU, or many dumb shovellers, will simply get in each others way. Imagine the task where either the CPU or the GPU must level out a plot of land. Each dumb shoveller need only be allocated part of the plot and dig a flat surface to the predetermined depth, each can perform this task simultaneously. The larger the plot of land, the better the GPU will perform in comparison.
+
+However, there is still a level of management that is expected of the programmer. These ones simple tasks can become quite complicated when you are management thousands of shovellers.
+
+
