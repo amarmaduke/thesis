@@ -1,0 +1,8 @@
+BBox improvement:
+gs -dNOPAUSE -dBATCH -q -sDEVICE=bbox .
+
+
+White area is a "hump" with only 1 atom adhered. The rest seems very similar to the eb0.1_et0.1 case with crumpled messes along the center.
+
+Figure sindex's:
+hump : 291

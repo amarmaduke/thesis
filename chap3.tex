@@ -120,8 +120,7 @@ Moving towards the y-axis we find ourselves encountering a less predictable beas
 
 	\begin{figure}[t!]
 		\begin{center}
-			%\includegraphics[scale=.6]{./figs/temp.eps}
-			\includegraphics[scale=.5]{./fig/sims/push/p.eps}
+			\includegraphics{./fig/temp.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:vanilla}}
@@ -302,6 +301,8 @@ Up until now all experiments have been done with a bottom substrate comprised of
 
 \section{Detachment}
 
+After a fiber has been compressed under the load of the upper substrate, and then relaxed, we next look at the minimum detachment magnitude. That is, for a given angle, $\theta$, what is the minimum magnitude, $\sqrt{\mu^2 + \lambda^2}$, such that the upper substrate will break the vdW forces adhering it to the fiber. The fiber and substrate start in a state satisfying the same equilibrium criteria (see Chapter~\ref{chap:two}) of the compression experiment and is also flattened. A load is applied on the upper substrate at several different angles and we bisect the minimum detachment magnitude for each angle.
+
 	\begin{table}
 		\rowcolors{1}{}{lightgray}
 		\centering
@@ -319,15 +320,19 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\end{tabular}
 	\end{table}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull/p.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid}}
 	\end{figure}
-	
-	\begin{figure}[h]
+
+\subsection{Observations of Reference Parameters}
+
+Again we have a set of reference parameters shown in Table~\ref{table:detachment_reference}. We use the same the adhesion heuristic to measure to attempt to capture different modes in the simulation. For compression this heuristic was more useful because the fiber and upper substrate were guaranteed to be adhered. Considering detachment we show the heuristic for simulations that are smaller than the minimum detachment magnitude. In Figure~\ref{fig:PullGrid} we see the minimum detachment magnitude and dots representing individual simulations. For the reference parameters, when we have no shearing component of the load we see that the upper substrate must break all vdW bonds simultaneously in order to detach. That means there is no intermediate detachment state where some bonds are broken and others not. This same behavior seems to be the case for any angle but that begs the question of why the required magnitude is not uniform. In fact there is a propagating wave originating at the root of the fiber that reduces the required magnitude to break the vdW bonds. The minimum detachment magnitude thus becomes a function of the angle of the load as some angles are better suited for allowing a wave to form at the root. We discuss this method of detachment in more detail in Section~\ref{section:detachment:eps} and~\ref{section:detachment:pressure}.
+
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_b10/p.eps}
 		\end{center}		
@@ -335,7 +340,7 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:b10}}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_b100/p.eps}
 		\end{center}		
@@ -343,7 +348,11 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:b100}}
 	\end{figure}
 	
-	\begin{figure}[h]
+\subsection{Varying $\beta$}
+
+We start with reference parameter that put $\beta$ at a value too small to allow the fiber to stand up on it's on, because of this we only focus on increasing $\beta$. With one order of magnitude we don't see much of a qualitative difference (see Figure~\ref{fig:PullGrid:b10}), but after a two degrees of magnitude we can see an asymmetry (see Figure~\ref{fig:PullGrid:b100}). With a stronger torsional spring the direction the fiber is flattened becomes more important. Once the load is sufficient the shift the root and generate a wave the stronger torsional spring causes the propagating wave's amplitude to reduce but it's phase to increase. Thus, there is a smaller surface area of the fiber that the upper substrate has to break free from for a long period of time. We would guess that with further increase in $\beta$ we would see a more pronounced asymmetry up to some diminishing returns because of the finite length of the fiber.[This is just conjecture at the moment]
+
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_eb0.1/p.eps}
 		\end{center}		
@@ -351,7 +360,7 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:eb0.1}}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_eb0.01/p.eps}
 		\end{center}		
@@ -359,7 +368,7 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:eb0.01}}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_eb0/p.eps}
 		\end{center}		
@@ -367,7 +376,7 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:eb0}}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_eb0.1_et0.1/p.eps}
 		\end{center}		
@@ -375,7 +384,7 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:eb0.1_et0.1}}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_eb0.1_et0.1_e0.1/p.eps}
 		\end{center}		
@@ -383,23 +392,33 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:eb0.1_et0.1_e0.1}}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_et10/p.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:et10}}
 	\end{figure}
-	
-	\begin{figure}[h]
+
+\subsection{Varying $\eps^-$, $\eps^+$, and $\eps$} \label{section:detachment:eps}
+
+For the same reason we only increase $\beta$, here we only decrease the vdW strengths. Our first interest is in decreasing $\eps^-$ only. Here we notice an exception in the assumptions we've used so far. An \textit{isolated detachment} is a load that will cause the upper substrate to detach from the fiber even though with a small increase in magnitude the substrate would stay adhered. The reasons for this have much to do with the propagating wave and how the upper substrate's particles align with the fiber's particles. Even one reduction in order of magnitude of $\eps^-$ has a significant qualitative effect (see Figure~\ref{fig:PullGrid:eb0.1}). The magnitude required for the upper substrate to detach is significantly less for every angle. Moreover, although the general symmetry survives to a certain point there are significantly more asymmetries. As $\eps^-$ is reduced by another order of magnitude the picture changes entirely as we can see from Figure~\ref{fig:PullGrid:eb0.01}. With the adhesion between the fiber and the bottom substrate so significantly weakened the reinforcement of the flattened state is removed and allows for the upper substrate to zip free of the fiber one vdW bond at a time. Thus, the initial resistance in moving the root and causing a propagating wave is no longer the primary method of detachment and becomes the greatest hindrance instead. When $\eps^-$ is reduced to the point of vanishing this zipping around no shear component becomes more obvious as magnitude just slightly below the minimum has only one particle adhered to the upper substrate (see Figure~\ref{fig:PullGrid:eb0}). It would seem then that zipping is an efficient enough method of detachment that it is easier to zip free of a bond than it is to break one. The resistance when there is primarily only a shear component again has the same difficulty as before.
+
+In Figure~\ref{fig:PullGrid:eb0.1_et0.1} we reduce both $\eps^-$, and $\eps^+$ by an order of magnitude. In comparison to the reference parameters the major difference is in the required magnitude to detach. This would seem like the obvious consequence as vdW bonds are the only reason for attachment. In Figure~\ref{fig:PullGrid:eb0.1_et0.1_e0.1} $\eps$ is also reduced by an order of magnitude, but there is no qualitative difference between the two. We also increase just $\eps^+$ in one case (see Figure~\ref{fig:PullGrid:et10}). We can see from the figure that it is most directly comparable to Figure~\ref{fig:PullGrid:eb0.1}.
+
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_g1000/p.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:g1000}}
 	\end{figure}
-	
-	\begin{figure}[h]
+
+\subsection{Varying $\gamma$}
+
+We increase $\gamma$ with the main motivation of making sure our selection of $\gamma$ is sufficiently large to maintain a stiffness of the fiber having strong atomic bonds between particles. Figure~\ref{fig:PullGrid:g1000} shows a direct similarity to the reference parameters with no discernible qualitative differences. This hints that our selection of $\gamma$ is sufficiently large to keep the bonds of the fiber stiff. The need to look at larger values of $\gamma$ in relation to other parameters is thus less important if the increased stiffness is not going to play a role in effecting, qualitatively, the behavior of the system.
+
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_p1_oscount0/p.eps}
 		\end{center}		
@@ -407,7 +426,7 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:p1}}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=.5]{./fig/sims/pull_p10_oscount0/p.eps}
 		\end{center}		
@@ -415,22 +434,6 @@ Up until now all experiments have been done with a bottom substrate comprised of
 		\label{fig:PullGrid:p10}}
 	\end{figure}
 
+\subsection{Replacing Atomized Bottom Substrate with Pressure} \label{section:detachment:pressure}
 
-\subsection{Observations of Reference Parameters}
-
-\subsection{Observations Increasing $\beta$}
-
-\subsection{Observations Decreasing $\eps^-$}
-
-\subsection{Observations Decreasing $\eps^-$, $\eps^+$, and $\eps$}
-
-\subsection{Observations Increasing $\eps^+$}
-
-\subsection{Observations Increasing $\gamma$}
-
-\subsection{Replacing Atomized Bottom Substrate with Pressure}
-
-
-
-
-\section{Conclusions}
+A modification to the system we described in Chapter~\ref{chap:two} places a continuum in place of an atomized bottom substrate. The same simulation procedure is used for two varying pressures shown in Figure~\ref{fig:PullGrid:p1} and Figure~\ref{fig:PullGrid:p10}. We can see that with small shearing component it is still increasingly difficult to detach from the fiber alone, in fact the concept of the fiber being reinforced from the bottom substrate still seems relevant. However, the continuum bottom substrate does not have the same general behavior when there is mostly only shearing component. The atomic nature of the bottom substrate in the previous examples is important in order to obtain the kind of wave behavior that we see cause local minimums.
