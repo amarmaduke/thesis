@@ -7,10 +7,10 @@
 	\caption{Model parameters. \label{table:parameters}}
 	\begin{tabular}{c p{.25in} p{4.5in}}
 		$m$ & & Number of fibers \\
-		$n_j$ & & Number of particles on fiber $j$, $1 \leq j \leq m$ \\
+		$n_j$ & & Number of particles on the $j$th fiber, $1 \leq j \leq m$ \\
 		$n_+$ & & Number of particles on the top substrate \\
 		$n_-$ & & Number of particles on the bottom substrate \\
-		$\delta_j$ & & Attachment point for fiber $j$ on bottom substrate, $1 \leq j \leq m$ \\
+		$\delta_j$ & & Attachment point for the $j$th fiber on the bottom substrate, $1 \leq j \leq m$ \\
 		$\ell$ & & Equilibrium distance for extensible springs \\
 		$\ell_+$ & & Spacing between particles on the top substrate \\
 		$\ell_-$ & & Spacing between particles on the bottom substrate \\
@@ -36,7 +36,7 @@
 	
 \section{Geometry}
 
-   We consider a collection of particles linked into a chain that we call a fiber. Each fiber is connected to a stationary horizontal (bottom) substrate at some fixed position. We also consider a (top) substrate that is always parallel to the bottom substrate and that always moves rigidly. There are two artificial particles associated with each fiber, one at the connection (or attachment) point with the bottom substrate and an additional particle placed at any point on a half circle below the bottom substrate of radius one. We call the particle at the attachment point the attachment particle, and the other particle below it the floating particle (see Figure~\ref{fig:Geometry}). The system consists of $m$ fibers, with $n_j$ particles for the $j$th fiber, a top substrate with $n_+$ particles, and a bottom substrate with $n_-$ particles.
+   We consider a collection of particles linked into a chain that we call a fiber. Each fiber is connected to a stationary horizontal (bottom) substrate at some fixed position. We also consider a (top) substrate that is always parallel to the bottom substrate and that only translates. There are two artificial particles associated with each fiber, one at the connection (or attachment) point with the bottom substrate and an additional particle placed at any point on a half circle below the bottom substrate of radius one. We call the particle at the attachment point the attachment particle, and the other particle below it the floating particle (see Figure~\ref{fig:Geometry}). The system consists of $m$ fibers, with $n_j$ particles for the $j$th fiber, a top substrate with $n_+$ particles, and a bottom substrate with $n_-$ particles.
 	
 We denote the position vector of the $i$th particle on the $j$th fiber by
 \begin{equation}
@@ -56,7 +56,7 @@ for the attachment particle and
 \end{equation}
 for the floating particle.
 
-	Each particle can be thought of as a discretization of a neighborhood of covalently bonded carbon atoms (see Figure~\ref{subfig:NanotubeParticle}). Indeed, in this model a chain of particles is motivated by describing a CNT. However, this approach is sufficiently generic to describe other fiber structures and we do not limit our discussion to this motivation.
+	The chain of particles is a discrete analog to a CNT (see Figure~\ref{subfig:NanotubeParticle}). Indeed, the vectors $\Delta \textbf{r}_i^{(j)}$ conceptually represent the interparticle bonds in this geometry. However, this approach is sufficiently generic to describe other fiber structures and we do not limit our discussion to this motivation.
 	
 	The bottom substrate as described before is attached to every fiber at the attachment particle. We define two position vectors,
 \begin{eqnarray}
@@ -68,11 +68,11 @@ for the top substrate and,
 	\textbf{r}_0^{(-)} = (x_0^{(-)},y_0^{(-)}) & \\
 	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_-,y_0^{(+)}), & 0 < i < n_-
 \end{eqnarray} 
-for the bottom substrate. Both substrates have one predetermined particle, the $0th$ particle. Both particles are decided as initial conditions together with the initial positions of every particle on each fiber. The rest of the particles on either substrate are defined by a parameter for the total number of particles, and an interval spacing, $\ell_+$ and $\ell_-$.
+for the bottom substrate. Since both substrates are rigid, the bottom substrate is stationary, and the top substrate is only allowed to translate, the positions of all particles on each substrate can be respectively specified by identifying the position of a single particle. Both particles are decided as initial conditions together with the initial positions of every particle on each fiber. The rest of the particles on either substrate are defined by a parameter for the total number of particles, and an interval spacing, $\ell_+$ and $\ell_-$.
 
 \section{Energy}
 
-	We want a fiber to be in equilibrium when all of it's particles are collinear and each particle is a fixed distance $\ell$ away from its neighbors. In order to enforce this equilibrium configuration we incorporate two types of springs into the model: an extensible spring and a torsional spring.
+	We want a fiber to be in equilibrium when all particles are collinear and each particle is a fixed distance $\ell$ away from its neighbors. In order to enforce this equilibrium configuration we incorporate two types of springs into the model: an extensible spring and a torsional spring.
 
 \subsection{Extensible spring}
 
@@ -80,11 +80,11 @@ for the bottom substrate. Both substrates have one predetermined particle, the $
 \begin{equation}
 	E_e = \gamma \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \left( \|\Delta \textbf{r}_i^{(j)} \| - \ell \right)^2 \right].
 \end{equation}
-Note that, with our notation for the $j$th, the sum starts with the first particle and the attachment particle of that fiber. The sum continues until the final particle on the fiber. Both the attachment particle and the floating particle are defined in the system for the purpose of placing springs at the connection between the fiber and the bottom substrate. For the extensible spring energy, the spring between the attachment particle and the first particle on each fiber enforces the notion of it being attached.
+Note that there is no spring between the floating particle and the attachment particle, but there is a spring between the attachment particle and the $\textbf{r}_0^{(j)}$ particle on the $j$th fiber. Both the attachment particle and the floating particle are introduced into the system to model the connection between the fiber and the bottom substrate. The spring between the attachment particle, $\textbf{r}_0^{(j)}$, and the particle, $\textbf{r}_1^{(j)}$, enforces attachment of the $j$th fiber.
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=1]{./old_fig/BendingEnergy.eps}
+			\input{./fig/ch2/torsionenergy.eps_tex}
 		\end{center}		
 		\caption{Two vectors $\textbf{a}$ and $\textbf{b}$, representing links between three particles and a corresponding angle measured against the positive $x$-axis centered at each tail point. The bending energy will be minimized when the difference in angle is zero, or the particles are collinear.
 		\label{fig:BendingEnergy}}
@@ -92,18 +92,18 @@ Note that, with our notation for the $j$th, the sum starts with the first partic
 
 \subsection{Torsional spring}
 
-	The extensible springs alone are not enough to describe the kind of equilibrium we want, so we introduce an energy penalty for bending. That is when the angle between adjacent links is not zero (see Figure~\ref{fig:BendingEnergy}). A quadratic energy is not sufficient because we want the angle, $\theta$, between three particles on a fiber to satisfy, $-180$\textdegree$ < \theta < 180$\textdegree. Therefore, we have
+	The extensible springs alone are not sufficient to describe the kind of equilibrium we seek, so we introduce an energy penalty for bending, when the adjacent particles are not collinear (see Figure~\ref{fig:BendingEnergy}). We choose the expression,
 \begin{equation}
 	e_b = 2\beta \tan^2 \left( \frac{\Delta \theta}{2} \right),
 \end{equation}
-where $e_b$ is the energy of one junction between two links and $\beta$ is the strength of the spring. However, the geometry is described in terms of particles, not angles. We can write the energy in terms of position vectors instead,
+to represent the energy of a torsional spring at the junction between two bonds. Here $\beta$ is the strength of the spring. Notice this energy diverges as $\Delta \theta \to \pm180$\textdegree to guarantee that the bonds to do fold onto themselves. The geometry of the system is described in terms of particles, not angles, hence we rewrite the energy in terms of position vectors,
 \begin{equation}
 	E_b = 2\beta \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \frac{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| - \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}}{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| + \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}} \right].
 \end{equation}
 
-	This energy incorporates every contiguous set of three particles, including the two artificial particles. With the incorporation of the angle between the artificial particles and the first particle, the minimizing angle of the fiber with respect to the substrate can be tuned according to the placement of the floating particle. For example, if the angle between the floating particle and the attachment particle is $90$\textdegree, then the entire fiber will want to be upright, if it is $45$\textdegree, then the entire fiber will want be slanted at $45$\textdegree. 
+	This energy incorporates every contiguous set of three particles, including the two artificial particles. With the incorporation of the angle between the artificial particles and the particle, $\textbf{r}_0^{(j)}$, the optimal angle of the fiber with respect to the substrate can be tuned according to the placement of the floating particle. For example, if the angle between the artificial bond connecting the floating particle to the attachment particle, and the first bond connecting the attachment particle to particle $\textbf{r}_0^{(j)}$ is $90$\textdegree, then the entire fiber will want to be upright. If the equilibrium attachment angle is $45$\textdegree, then the entire fiber will want be slanted at $45$\textdegree,~etc. 
 
-   We call this energy between every contiguous three particles a torsional spring. The system of extensible and torsional springs is sufficient to model the equilibrium behavior we want absent of any other influence. However, we are still motivated by a nanoscale setting, namely that of CNTs. We introduce a particle-particle interaction to model the kinds of molecular forces we would expect on a nanoscale.
+   The system of extensible and torsional springs is sufficient to model the equilibrium behavior of a system of isolated noninteracting fibers. However, we are still motivated by a nanoscale setting, namely that of CNTs. We introduce a particle-particle interaction to model the kinds of molecular forces we would expect on a nanoscale.
 
 \subsection{van der Waals interactions}	
 
@@ -123,7 +123,7 @@ where $e_b$ is the energy of one junction between two links and $\beta$ is the s
 		\caption{Lennard-Jones 12-6 potential and force with $\sigma = 1$ and $\varepsilon = 100$.\label{fig:LJ}}	
 	\end{figure*}
 
-   Van der Waals' (vdW) interaction are used to describe the sum of attractive and repulsive forces of atomic structures that are not accounted for by their covalent bonds. In a CNT setting we consider the extensible spring already described as an abstraction of covalent bonding of several carbon atoms but we have yet to account for any vdW interaction. We use a truncated Lennard-Jones 12-6 potential to represent the vdW interactions between each particle in the model. The Lennard-Jones potential is parameterized by the strength of the interaction, $\varepsilon$, and the equilibrium distance between two interacting particles, $\sigma$ (see Figure~\ref{fig:LJ}). An exception is made for particles with an extensible spring between them. Stated precisely, there is vdW interaction between every particle and every other particle except if the two particles are adjacent on the same fiber.
+   Van der Waals' (vdW) interaction are used to describe the sum of attractive and repulsive forces of atomic structures that are not accounted for by their covalent bonds. In a CNT setting we consider the extensible spring already described as an abstraction of covalent bonding of carbon atoms but we have yet to account for any vdW interaction. We use a truncated Lennard-Jones 12-6 potential to represent the vdW interactions between each particle in the model. The Lennard-Jones potential is parameterized by the strength of the interaction, $\varepsilon$, and the equilibrium distance between two interacting particles, $\sigma$ (see Figure~\ref{fig:LJ}). An exception is made for particles with an extensible spring between them. Stated precisely, there is vdW interaction between every particle and every other particle except if the two particles are adjacent on the same fiber.
 	
 The standard Lennard-Jones potential,
 \begin{equation}
@@ -159,7 +159,7 @@ asymptotically approaches zero as $x$ approaches infinity. This makes Lennard-Jo
 
 	The sequence of truncated Lennard-Jones potentials converges to the Lennard-Jones potential as $r_c \to \infty$ and the truncated Lennard-Jones potentials share the same asymptotic behavior (see Figure~\ref{fig:LJT}). This truncation technique is referred to as shifted forces, it is commonly used to conserve energy in the potential and avoid potential artifacts with a model. The discontinuous truncation is also used but can cause larger discrepancies in energy particularly with very long simulations. Although this method alters the potential everywhere the accuracy with respect to the true potential has been observed in molecular dynamics simulations as better than the discontinuous truncation \cite{Toxvaerd2011}.
 	
-   We are searching for equilibrium which can cause very long time intervals, so to avoid artifacts in the geometry we use the continuous variation of the truncated Lennard-Jones potential. Moreover, we pick a conservative cutoff selection of $r_c = 8$ in all simulations to further ensure accuracy of equilibrium configurations.
+  Time dependent simulations leading to equilibrium for large systems can require long time intervals, so to avoid artifacts in the geometry we use the continuous variation of the truncated Lennard-Jones potential. Moreover, we pick a conservative cutoff selection of $r_c = 8$ in all simulations to further ensure accuracy of equilibrium configurations.
 
 	In order to represent concisely the set of particles that a given particle is interacting with, we define the set
 \begin{equation}
@@ -167,7 +167,7 @@ asymptotically approaches zero as $x$ approaches infinity. This makes Lennard-Jo
 \end{equation}
 which contains every particle that the $i$th particle on the $j$th fiber interacts with via the truncated 12-6 potential. Now we can express the vdW energy for the system,
 \begin{multline}
-	E_v = \sum_{j=1}^m \sum_{i=1}^{n_j} \bigg[ \sum_{(h,k) \in P(j,i)} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(h)} \|; \varepsilon, \sigma \right) \\ + \sum_{k=1}^{n_-} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(-)} \|; \varepsilon^+, \sigma \right) + \sum_{k=1}^{n_+} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(+)} \|; \varepsilon^-, \sigma \right) \bigg].
+	E_v = \sum_{j=1}^m \sum_{i=1}^{n_j} \bigg[ \sum_{(h,k) \in P(j,i)} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(h)} \|; \varepsilon, \sigma \right) \\ + \sum_{k=1}^{n_-} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(-)} \|; \varepsilon_-, \sigma \right) + \sum_{k=1}^{n_+} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(+)} \|; \varepsilon_+, \sigma \right) \bigg].
 \end{multline}
 It is not the case that the interaction strength is the same for each potential. There are different strengths for fiber to fiber, fiber to top substrate, and fiber to bottom substrate interactions.
 
