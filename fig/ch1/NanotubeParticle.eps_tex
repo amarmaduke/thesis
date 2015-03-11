@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'torsionenergy.eps' (pdf, eps, ps)
+%% Accompanies image file 'NanotubeParticle.eps' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -20,7 +20,7 @@
 %%   \import{<path to file>}{<filename>.pdf_tex}
 %% Alternatively, one can specify
 %%   \graphicspath{{<path to file>/}}
-%%
+%% 
 %% For more information, please see info/svg-inkscape on CTAN:
 %%   http://tug.ctan.org/tex-archive/info/svg-inkscape
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{312.66201172bp}%
+    \setlength{\unitlength}{358.33337402bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,12 +48,7 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.48119362)%
-    \put(0,0){\includegraphics[width=\unitlength]{./fig/ch2/torsionenergy.eps}}%
-    \put(0.15879131,0.12311926){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\Delta \theta = \theta_2 - \theta_1$}}}%
-    \put(0.70529178,0.13836027){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\theta_2$}}}%
-    \put(0.78423093,0.23548289){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\textbf{b}}}}%
-    \put(0.29799379,0.04551702){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\textbf{a}}}}%
-    \put(0.48243911,0.04550531){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\theta_1$}}}%
+  \begin{picture}(1,2.45337672)%
+    \put(0,0){\includegraphics[width=\unitlength]{NanotubeParticle.eps}}%
   \end{picture}%
 \endgroup%
