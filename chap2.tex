@@ -204,11 +204,11 @@ The evolution of the physical system governed by \eqref{eqn:system} drives the e
 
    In this section we discuss the simulation procedure utilized in Chapter~\ref{chap:three} and Chapter~\ref{chap:four} and presented in Appendix~\ref{ap:c}. We omit details of standard library algorithms and focus instead on details on nonstandard implementations of algorithms we employ.
 
-   The choice of a truncated Lennard-Jones potential allows for an optimization that improves the average number of interactions that need to be computed. The optimization in this work uses the Verlet neighbor list method. This method improves computation at every time step from O(n^2) to O(n). 
+   The choice of a truncated Lennard-Jones potential allows for an optimization that improves the average number of interactions that need to be computed. The optimization in this work uses the Verlet neighbor list method. This method improves computation at every time step from $O(n^2)$ to O(n). 
    
    TODO: just describe Verlet neighbor list method in detail
    
-   The saving comes from the fact that if you have to update the list then you still have to do O(n^2) interactions, so you do an O(n) check every time step and save on when it doesn't have to be updated.
+   The saving comes from the fact that if you have to update the list then you still have to do$ O(n^2)$ interactions, so you do an O(n) check every time step and save on when it doesn't have to be updated.
    
    
    The trade off becomes an $\mathcal{O}(n)$ algorithm at each time step to determine if the list needs to be updated. Each time step the two largest displacements of unique particles are computed. If the sum of these displacements is larger than the buffer distance of the Verlet neighbor list then the list must be updated. The buffer zone in our case is the distance from our cutoff, $r_c = 8$, and a second cutoff, $r_{max} = 12$. For all simulations discussed here we have a buffer radius of $4$. Verlet neighbor lists are not the only manner of implementing the optimization and the reader may be interested in other solutions, such as cell lists.
