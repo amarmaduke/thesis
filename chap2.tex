@@ -176,47 +176,45 @@ It is not the case that the interaction strength is the same for each potential.
 %	E_p = \sum_{j=1}^m \sum_{i=1}^{en_j} U_p \left( y_i^{(j)} \right)
 %\end{equation}
 
-\subsection{Total energy}
+\subsection{Total energy and dynamics}
 
-With both springs and vdW interaction the system of fibers and the bottom substrate is complete. What is left is the rigid motion of the top substrate. We apply a load on the $0$th particle of the top substrate with vertical component $\lambda$ and horizontal component $\mu$. This is consistent with applying a load to the center of mass of the top substrate.
+With both springs and vdW interaction the system of fibers and the bottom substrate is complete. What is left is the rigid motion of the top substrate. We apply a load with a vertical component, $\lambda$, and horizontal component, $\mu$, to the top substrate. Recall, that the top substrate is only allowed to undergo translational motion parallel to the bottom substrate.
 
-We have described the model so far as different partial energies. It comes as no surprise then that the total energy for the system is
+With all interactions in the system defined, the total energy of the system is
 
 % Total energy
 \begin{equation}
 	E = E_b + E_e + E_v + \lambda x_0^{(+)} - \mu y_0^{(+)}.
 \end{equation}
-The model for the system includes two springs, the extensible and torsional springs, the vdW interaction, and the rigid motion of the top substrate. Note that $\lambda$ is flipped from what might be considered intuition. Positive values of $\lambda$ will move the top substrate ``down'' towards the fiber, instead of ``up''.
-
-\section{Dynamics}
+The model for the system includes two springs, the extensible and torsional springs, the vdW interaction, and the rigid motion of the top substrate. Note that the signs for $\lambda$ and $\mu$ are selected so that positive vertical load is pointing downward, while positive horizontal load points to the right.
 
 Using Newton's second law with a damping term we have,
 
 \begin{equation}
 	M\frac{d^2\textbf{r}_i^{(j)}}{dt^2} + \frac{d\textbf{r}_i^{(j)}}{dt} = -\nabla_{\textbf{r}_i^{(j)}}E,
 \end{equation}
-for the $i$th particle on the $j$th fiber, where $M$ is the mass of the particle. We assume the mass of particles we want to take into consideration are small enough to make the acceleration negligible. This gives us,
+for the $i$th particle on the $j$th fiber, where $M$ is the mass of the particle. Here we assume the particles are massless so that the acceleration is negligible, that is
 
-\begin{equation}
-	 \frac{d\textbf{r}_i^{(j)}}{dt} = -\nabla_{\textbf{r}_i^{(j)}}E.
+\begin{equation} \label{eqn:system}
+	 \frac{d\textbf{r}_i^{(j)}}{dt} = -\nabla_{\textbf{r}_i^{(j)}}E,\ \ \ 1 \leq j \leq m,\  1 \leq i \leq n_j.
 \end{equation}
-Approximating the derivative with a backwards difference gives us gradient descent,
-
-\begin{equation}
-    \textbf{r}_i^{(j),n} = \textbf{r}_i^{(j),n-1} - dt\nabla_{\textbf{r}_i^{(j)}}E.
-\end{equation}
-Clearly solving this ordinary differential equation will minimize the total energy.
-
-The gradient flow dynamics of the governing equation have to be considered with the understanding that we assume our particles have sufficiently small mass. The model itself is abstract but it must be not be divorced from this assumption.
+The evolution of the physical system governed by \eqref{eqn:system} drives the energy towards a minimum.
 
 \section{Implementation}
 
-   The implementation for the simulations that follow in Chapter~\ref{chap:three} and Chapter~\ref{chap:four} have a few implementation details that may be important to understand. We discuss those details here in order to give the reader a glimpse into what they might consider important factors in how to interpret results.
+   In this section we discuss the simulation procedure utilized in Chapter~\ref{chap:three} and Chapter~\ref{chap:four} and presented in Appendix~\ref{ap:c}. We omit details of standard library algorithms and focus instead on details on nonstandard implementations of algorithms we employ.
 
-   The use of a truncated Lennard-Jones potential allows for an optimization that improves the average number of interactions that need to be computed. The optimization used in this work is a Verlet neighor list. However, using such a list leads to other important considerations, namely how it is to be updated. The trade off becomes an $\mathcal{O}(n)$ algorithm at each time step to determine if the list needs to be updated. Each time step the two largest displacements of unique particles are computed. If the sum of these displacements is larger than the buffer distance of the Verlet neighbor list then the list must be updated. The buffer zone in our case is the distance from our cutoff, $r_c = 8$, and a second cutoff, $r_{max} = 12$. For all simulations discussed here we have a buffer radius of $4$. Verlet neighbor lists are not the only manner of implementing the optimization and the reader may be interested in other solutions, such as cell lists.
+   The choice of a truncated Lennard-Jones potential allows for an optimization that improves the average number of interactions that need to be computed. The optimization in this work uses the Verlet neighbor list method. This method improves computation at every time step from O(n^2) to O(n). 
+   
+   TODO: just describe Verlet neighbor list method in detail
+   
+   The saving comes from the fact that if you have to update the list then you still have to do O(n^2) interactions, so you do an O(n) check every time step and save on when it doesn't have to be updated.
+   
+   
+   The trade off becomes an $\mathcal{O}(n)$ algorithm at each time step to determine if the list needs to be updated. Each time step the two largest displacements of unique particles are computed. If the sum of these displacements is larger than the buffer distance of the Verlet neighbor list then the list must be updated. The buffer zone in our case is the distance from our cutoff, $r_c = 8$, and a second cutoff, $r_{max} = 12$. For all simulations discussed here we have a buffer radius of $4$. Verlet neighbor lists are not the only manner of implementing the optimization and the reader may be interested in other solutions, such as cell lists.
 
-   Equilibrium configurations are hard to decide on because we don't have infinite computation time to make sure nothing changes numerically. To ensure that the algorithm eventually stops we need an equilibrium criterion that when satisfied declares the system in equilibrium. In our case the equilibrium criterion is relative. That is, we take the norm distance between the current state vector and the prior state vector of the system. If this distance is less than a tolerance, $10^{-8}$, we mark the system as in equilibrium. However, we go one step further and require that this condition be satisfied persistently for ten time steps.
-
-   There is another kind of equilibrium that is used to end early on simulations. If we have a load with negative or no vertical component, $\lambda$, then we likely only interested in how the top substrate interacts with the fibers of the system. If the top substrate is not interacting at all because it's too far away, then it is not coming back. That is, if the displacement of the top substrate $0$th particle is within $10^{-8}$ of it's maximum displacement, $\sqrt{\lambda^2 + \mu^2}$, then we say the system is in equilibrium. As before, this must hold for ten time steps before the simulation ends and the final decision is made.
-
-   Finally, there are two versions of the code, MATLAB \cite{MATLAB2010} and C/C++. All results shown in this work use the C version only. However, the MATLAB version came first and the correctness of the C/C++ version was considered in relation to it. The software package used to evolve the system each time step was SUNDIALS, and in particular CVODE \cite{sundials}. All figures displayed in this work were generated using MatPlotLib \cite{Hunter2007}. The MATLAB and C/C++ simulation code, as well as the python visualization code are provided in appendices.
+   Equilibrium configurations are hard to decide on because we don't have infinite computation time to make sure nothing changes numerically. To ensure that the algorithm eventually stops we need an equilibrium criterion that when satisfied declares the system in equilibrium. In our case the equilibrium criterion is relative. That is, we take the norm distance between the current state vector and the prior state vector of the system. If this distance is less than a tolerance, $10^{-8}$, we mark the system as in equilibrium. We require that this condition is satisfied for ten consecutive time steps as the practical stopping criterion.
+   
+   Another stopping criterion is if the velocity of the top substrate is within $10^{-8}$ of a prescribed maximum velocity, $\frac{\sqrt{\lambda^2 + \mu^2}}{\Delta t}$, then we can stop the simulation early. As before, this must hold for ten time steps before the simulation ends. We discuss this stopping criterion in greater detail in Section~\ref{ch:detachment}.
+   
+   The numerical procedure was implemented in both MATLAB \cite{MATLAB2010} (Appendix~\ref{ap:b}) and C/C++ (Appendix~\ref{ap:c}). The results presented in this thesis were obtained using the C/C++ version. However, the MATLAB version was run for some test cases to verify the compare against the C/C++ version. The software package SUNDIALS (CVODE \cite{sundials}) was used to evolve the system at each time step. All figures were generated using MatPlotLib \cite{Hunter2007} with Python (Appendix~\ref{ap:a}) and Inkscape.
