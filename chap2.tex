@@ -1,7 +1,7 @@
 \chapter{Model} \label{chap:two}
 
 % Parameter Table
-\begin{table}
+\begin{table}[t]
 	\rowcolors{1}{}{lightgray}
 	\centering
 	\caption{Model parameters. \label{table:parameters}}
@@ -24,20 +24,12 @@
 		$(x^{(+)}_0,y^{(+)}_0)$ & & Initial position for first particle on the top substrate \\
 		$(x^{(-)}_0,y^{(-)}_0)$ & & Initial position for first particle on the bottom substrate
 	\end{tabular}
-\end{table}
-	
-	\begin{figure}
-		\begin{center}
-			\input{./fig/ch2/geometry.eps_tex}
-		\end{center}		
-		\caption{Geometry of a fiber pinned between the top and bottom substrates.
-		\label{fig:Geometry}}
-	\end{figure}		
+\end{table}	
 	
 \section{Geometry}
 
    We consider a collection of particles linked into a chain that we call a fiber. Each fiber is connected to a stationary horizontal (bottom) substrate at some fixed position. We also consider a (top) substrate that is always parallel to the bottom substrate and that only translates. There are two artificial particles associated with each fiber, one at the connection (or attachment) point with the bottom substrate and an additional particle placed at any point on a half circle below the bottom substrate of radius one. We call the particle at the attachment point the attachment particle, and the other particle below it the floating particle (see Figure~\ref{fig:Geometry}). The system consists of $m$ fibers, with $n_j$ particles for the $j$th fiber, a top substrate with $n_+$ particles, and a bottom substrate with $n_-$ particles.
-	
+
 We denote the position vector of the $i$th particle on the $j$th fiber by
 \begin{equation}
 	\textbf{r}_i^{(j)} = (x_i^{(j)},y_i^{(j)})
@@ -55,6 +47,15 @@ for the attachment particle and
 	\textbf{r}_{-1}^{(j)} = (x_{-1}^{(j)},y_{-1}^{(j)}).
 \end{equation}
 for the floating particle.
+
+	\begin{figure}[t]
+		\begin{center}
+			\input{./fig/ch2/geometry.eps_tex}
+		\end{center}		
+		\caption{Geometry of a fiber pinned between the top and bottom substrates.
+		\label{fig:Geometry}}
+	\end{figure}
+
 
 	The chain of particles is a discrete analog to a CNT (see Figure~\ref{subfig:NanotubeParticle}). Indeed, the vectors $\Delta \textbf{r}_i^{(j)}$ conceptually represent the interparticle bonds in this geometry. However, this approach is sufficiently generic to describe other fiber structures and we do not limit our discussion to this motivation.
 	
@@ -82,7 +83,7 @@ for the bottom substrate. Since both substrates are rigid, the bottom substrate 
 \end{equation}
 Note that there is no spring between the floating particle and the attachment particle, but there is a spring between the attachment particle and the $\textbf{r}_0^{(j)}$ particle on the $j$th fiber. Both the attachment particle and the floating particle are introduced into the system to model the connection between the fiber and the bottom substrate. The spring between the attachment particle, $\textbf{r}_0^{(j)}$, and the particle, $\textbf{r}_1^{(j)}$, enforces attachment of the $j$th fiber.
 
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
 			\input{./fig/ch2/torsionenergy.eps_tex}
 		\end{center}		
@@ -107,7 +108,7 @@ to represent the energy of a torsional spring at the junction between two bonds.
 
 \subsection{van der Waals interactions}	
 
-	\begin{figure*}[t!]
+	\begin{figure*}[t]
 		\centering
 		\begin{subfigure}[t]{.5\textwidth}
 			\centering
@@ -130,7 +131,7 @@ The standard Lennard-Jones potential,
 	U(x; \varepsilon, \sigma) = \varepsilon \left[ \left( \frac{\sigma}{x} \right)^{12} - 2 \left( \frac{\sigma}{x} \right)^6 \right],
 \end{equation}
 
-	\begin{figure*}[t!]
+	\begin{figure*}[t]
 		\centering
 		\begin{subfigure}[t]{.5\textwidth}
 			\centering

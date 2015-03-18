@@ -1,6 +1,8 @@
 ## Main document
 main.ps
 main.pdf
+fig/temp_*
+
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

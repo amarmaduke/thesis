@@ -4,9 +4,9 @@ Although coarse-grained models of a similar nature can and have been fitted to m
 
 \section{Free standing}
 
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/freestanding/fs.eps}
+			\includegraphics{./fig/ch3/fs/grid.eps}
 		\end{center}		
 		\caption{Phase plot of a fiber's torsional spring strength, $\beta$, against the strength of the bottom substrate's vdW force, $\eps^-$.
 		\label{fig:FreeStandingGrid}}
@@ -31,17 +31,17 @@ If a fiber is not strong enough to prevent crystallization with the bottom subst
 The modes a fiber free from the top substrate are categorizable as collapsed, folded, crystallized, and slanted. These can be immediately seen in figure \ref{fig:FreeStandingGrid}. The white section sufficiently distant from the origin is slanted, the black section above it collapsed, and sufficiently close to the y-axis is crystallized.
 
 	%% Erect Figures
-	\begin{figure*}
+	\begin{figure*}[t]
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/erect.eps}
+			\includegraphics{./fig/ch3/fs/b10_eb1.eps}
 			\caption{TODO \label{subfig:fs_erect}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/erect_leaning.eps}
+			\includegraphics{./fig/ch3/fs/b10_eb3.eps}
 			\caption{TODO\label{subfig:fs_erectlean}}
 		\end{subfigure}
 		\caption{TODO\label{fig:fs_erect}}
@@ -52,19 +52,19 @@ The modes a fiber free from the top substrate are categorizable as collapsed, fo
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/completely_down.eps}
+			\includegraphics{./fig/ch3/fs/b5_eb3.eps}
 			\caption{TODO \label{subfig:fs_down}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/one_fold.eps}
+			\includegraphics{./fig/ch3/fs/b2_eb6.eps}
 			\caption{TODO \label{subfig:fs_onefold}}
 		\end{subfigure}
 
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/many_folds.eps}
+			\includegraphics{./fig/ch3/fs/b0.5_eb10.eps}
 			\caption{TODO \label{subfig:fs_manyfold}}
 		\end{subfigure}		
 		\caption{TODO\label{fig:fs_folds}}	
@@ -75,21 +75,27 @@ The modes a fiber free from the top substrate are categorizable as collapsed, fo
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/crystal1.eps}
+			\includegraphics{./fig/ch3/fs/b0.1_eb0.5.eps}
 			\caption{TODO \label{subfig:fs_crystal1}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/crystal2.eps}
+			\includegraphics{./fig/ch3/fs/b0.1_eb3.eps}
 			\caption{TODO \label{subfig:fs_crystal2}}
 		\end{subfigure}
 
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/freestanding/crystal3.eps}
+			\includegraphics{./fig/ch3/fs/b0.2_eb3.eps}
 			\caption{TODO \label{subfig:fs_crystal3}}
-		\end{subfigure}		
+		\end{subfigure}%
+		~
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics{./fig/ch3/fs/b0.2_eb9.eps}
+			\caption{TODO \label{subfig:fs_crystal4}}
+		\end{subfigure}	
 		\caption{TODO\label{fig:fs_crystal}}	
 	\end{figure*}
 
@@ -118,11 +124,11 @@ Moving towards the y-axis we find ourselves encountering a less predictable beas
 		\end{tabular}
 	\end{table}
 
-	\begin{figure}[t!]
-		\begin{center}
-			\includegraphics{./fig/temp.eps}
+	\begin{figure}
+		\begin{center}[t]
+			\includegraphics{./fig/ch3/push/ref/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ le $\theta$ le
 		\label{fig:PushGrid:vanilla}}
 	\end{figure}	
 	
@@ -172,17 +178,17 @@ Given the reference parameters in Table~\ref{table:compression_reference} we hav
 
 Flattened fibers occur under these parameters when the angle of the load is sufficiently away from $\frac{\pi}{2}$. An explanation for this behavior is that as the fiber buckles it crystallizes with the top substrate and is sheared by the horizontal component of the load to be ``zipped'' to the top substrate. A fiber \textit{zips} (or \textit{unzips}) from a substrate when one particle crystallizes (or breaks crystallization) at a time and in rapid succession. Therefore if the load is closer to $\frac{\pi}{2}$ it loses the shearing component and no longer causes the fiber to zip.
 
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_b100/p.eps}
+			\includegraphics{./fig/ch3/push/b100/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:b100}}
 	\end{figure}	
 	
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_b1000/p.eps}
+			\includegraphics{./fig/ch3/push/b1000/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:b1000}}
@@ -216,7 +222,7 @@ Increasing $\beta$ shows a shrinking region for folding fibers under any load in
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_eb0.1/p.eps}
+			\includegraphics{./fig/ch3/push/eb0.1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:eb0.1}}
@@ -224,7 +230,7 @@ Increasing $\beta$ shows a shrinking region for folding fibers under any load in
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_et0.1/p.eps}
+			\includegraphics{./fig/ch3/push/et0.1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:et0.1}}
@@ -238,9 +244,9 @@ Increasing $\beta$ shows a shrinking region for folding fibers under any load in
 		\label{fig:push_hump}}
 	\end{figure}	
 
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_eb0.1_et0.1/p.eps}
+			\includegraphics{./fig/ch3/push/eb0.1_et0.1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:eb0.1_et0.1}}
@@ -272,9 +278,9 @@ Increasing $\beta$ shows a shrinking region for folding fibers under any load in
 
 An order of magnitude decrease in $\eps^-$ seems to play no qualitative role in equilibrium configurations, at least with the selected reference parameters (see Figure~\ref{fig:PushGrid:eb0.1}). However, an order of magnitude decrease in $\eps^+$ plays a significant role (see Figure~\ref{fig:PushGrid:et0.1}). The shear component of the load instead of causing the fiber to zip to the top substrate causes the top substrate to slide off. That is, the van der Waals interaction is not strong enough for large shear components or large magnitudes to hold or adhere to the fiber. Even so and angled load is necessary to cause a flattened configuration, but the region of angles that cause folding as increased. This is because with sufficiently small shear component will cause the fiber to buckle and then van der Waals interaction between particles on the fiber will be the dominate force as the fiber zips against itself. The isolated white regions of Figure~\ref{fig:PushGrid:et0.1} are of a ``hump'' configuration (see Figure~\ref{fig:push_hump}). The hump is caused by the fiber zipping to the bottom substrate with fold immediately at the root causing a ``hump''. The top substrate is then only adhered to a single particle of the fiber. If both $\eps^-$ and $\eps^+$ are decreased by an order of magnitude then we have a similar diagram as with only $\eps^-$ being reduced but the ``hump'' configuration is lost (see Figure~\ref{fig:PushGrid:eb0.1_et0.1}). This variation from the reference parameters weakens adhesion of all van der Waals interactions between the fiber and either substrate but keeps the same interaction between particles on the fiber with other particles on the fiber. Therefore, folding is more prominent for the same reasons that folding was more prominent when only $\eps^-$ was decreased.
 	
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_g1000/p.eps}
+			\includegraphics{./fig/ch3/push/g1000/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:g1000}}
@@ -284,9 +290,9 @@ An order of magnitude decrease in $\eps^-$ seems to play no qualitative role in 
 
 An order of magnitude increase in $\gamma$ has no observable effect (see Figure~\ref{fig:PushGrid:g1000}). The purpose of $\gamma$ is to keep the particles a fixed distance apart but allow for some relaxation. If $\gamma$ were very large we might expect the bonds to be too stiff and prevent crystallization. However, the uniform spacing between particles on the substrates and the ideal spacing, $\ell$, of particles on the fiber allow for at least some crystallization regardless of how stiff the extensible spring is made to be. Intuitively, it would seem that even with very stiff extensible springs the diagram would still not vary significantly from Figure~\ref{fig:PullGrid}.
 
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/push_p1_oscount0/p.eps}
+			\includegraphics{./fig/ch3/push/p1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PushGrid:p1}}
@@ -322,7 +328,7 @@ After a fiber has been compressed under the load of the upper substrate, and the
 	
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull/p.eps}
+			\includegraphics{./fig/ch3/pull/ref/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid}}
@@ -332,17 +338,17 @@ After a fiber has been compressed under the load of the upper substrate, and the
 
 Again we have a set of reference parameters shown in Table~\ref{table:detachment_reference}. We use the same the adhesion heuristic to measure to attempt to capture different modes in the simulation. For compression this heuristic was more useful because the fiber and upper substrate were guaranteed to be adhered. Considering detachment we show the heuristic for simulations that are smaller than the minimum detachment magnitude. In Figure~\ref{fig:PullGrid} we see the minimum detachment magnitude and dots representing individual simulations. For the reference parameters, when we have no shearing component of the load we see that the upper substrate must break all vdW bonds simultaneously in order to detach. That means there is no intermediate detachment state where some bonds are broken and others not. This same behavior seems to be the case for any angle but that begs the question of why the required magnitude is not uniform. In fact there is a propagating wave originating at the root of the fiber that reduces the required magnitude to break the vdW bonds. The minimum detachment magnitude thus becomes a function of the angle of the load as some angles are better suited for allowing a wave to form at the root. We discuss this method of detachment in more detail in Section~\ref{section:detachment:eps} and~\ref{section:detachment:pressure}.
 
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_b10/p.eps}
+			\includegraphics{./fig/ch3/pull/b10/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:b10}}
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[t]
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_b100/p.eps}
+			\includegraphics{./fig/ch3/pull/b100/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:b100}}
@@ -354,7 +360,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_eb0.1/p.eps}
+			\includegraphics{./fig/ch3/pull/eb0.1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:eb0.1}}
@@ -362,7 +368,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_eb0.01/p.eps}
+			\includegraphics{./fig/ch3/pull/eb0.01/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:eb0.01}}
@@ -370,7 +376,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 	
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_eb0/p.eps}
+			\includegraphics{./fig/ch3/pull/eb0/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:eb0}}
@@ -378,7 +384,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 	
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_eb0.1_et0.1/p.eps}
+			\includegraphics{./fig/ch3/pull/eb0.1_et0.1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:eb0.1_et0.1}}
@@ -386,7 +392,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 	
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_eb0.1_et0.1_e0.1/p.eps}
+			\includegraphics{./fig/ch3/pull/eb0.1_et0.1_e0.1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:eb0.1_et0.1_e0.1}}
@@ -394,7 +400,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 	
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_et10/p.eps}
+			\includegraphics{./fig/ch3/pull/et10/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:et10}}
@@ -408,7 +414,7 @@ In Figure~\ref{fig:PullGrid:eb0.1_et0.1} we reduce both $\eps^-$, and $\eps^+$ b
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_g1000/p.eps}
+			\includegraphics{./fig/ch3/pull/g1000/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:g1000}}
@@ -420,7 +426,7 @@ We increase $\gamma$ with the main motivation of making sure our selection of $\
 
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_p1_oscount0/p.eps}
+			\includegraphics{./fig/ch3/pull/p1/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:p1}}
@@ -428,7 +434,7 @@ We increase $\gamma$ with the main motivation of making sure our selection of $\
 	
 	\begin{figure}
 		\begin{center}
-			\includegraphics[scale=.5]{./fig/sims/pull_p10_oscount0/p.eps}
+			\includegraphics{./fig/ch3/pull/p10/grid.eps}
 		\end{center}		
 		\caption{ TODO
 		\label{fig:PullGrid:p10}}
