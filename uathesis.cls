@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uathesis}[2004/11/04 v1.4 UA Thesis]
-
+%
+% Updated on website on 4/7/14 by blinhart
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % University of Akron Thesis Class (D. Dane Quinn)
@@ -747,3 +748,4 @@
 \pagestyle{emthesis}
 
 \endinput
+
