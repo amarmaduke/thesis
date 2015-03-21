@@ -17,17 +17,19 @@
 		\end{tabular}
 	\end{table}
 
-	In Chapter~\ref{chap:three} we discussed three different simulation experiments: a fiber standing free of load, a fiber under compression from the top substrate, and the top substrate detaching from the fiber. Here we look at the compression experiment with ten fibers. As before we have a set of reference parameters (see Table~\ref{table:manyfiber_reference}). We run the compression experiment on the reference parameters and three variations of the parameters, specifically varying $\beta$, $\gamma$, and $\eps_+$.
+	In Chapter~\ref{chap:three} we discussed three different simulation experiments: a fiber standing free of load, a fiber under compression from the top substrate, and the top substrate detaching from the fiber. Here we look at the compression experiment with ten fibers. As before we have a set of reference parameters (see Table~\ref{table:manyfiber_reference}). We run the compression experiment for the reference parameters and three variations of the parameters, specifically varying $\beta$, $\gamma$, and $\eps_+$.
 
 	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=1]{./fig/ch4/grid.eps}
 		\end{center}		
-		\caption{Equilibrium configurations of ten fibers with 96 particles each for varying loads. The top left plot is a configuration with a load of $\lambda = 5$ and $\mu = 0$. The configurations immediately to the right are increasing $\mu$, and immediately below are increasing $\lambda$. All configurations use the reference parameters in Table~\ref{table:manyfiber_reference}.
+		\caption{Equilibrium configurations of ten fibers with 96 particles each for varying loads. The top left plot is a configuration with a load of $\lambda = 5$ and $\mu = 0$. The configurations to the right and below correspond to an increasing $\mu$ and increasing $\lambda$ respectively. All configurations use the reference parameters in Table~\ref{table:manyfiber_reference}.
 		\label{fig:grid}}
 	\end{figure}
 	
-	For computational reasons the granularity of our search space is signficantly smaller than with the single fiber case. We consider nine simulations with values of $\lambda = 5, 15, 25$ and $\mu = 0, 5, 10$. In Figure~\ref{fig:grid} we see a high level view of each simulation for the reference parameters. Keeping the horizontal component of the load zero, we see an increase in the aggregate curvature of all ten fibers as we increase $\lambda$. One explanation for this is that the torsional and extensible springs are not given enough leverage to slide along the top substrate and align to it. As the magnitude of the load is increased the fibers become more likely to buckle. If we increase $\mu$ the story changes. We are able to maintain the aligned compressed configuration for larger magnitudes of the load if the horizontal component is sufficiently large. It would seem the ratio between vertical and horizontal component for the reference parameters is the deciding factor for whether or not fibers will buckle.
+	We consider nine simulations with values of $\lambda = 5, 15, 25$ and $\mu = 0, 5, 10$. In Figure~\ref{fig:grid} we see a high level view of each simulation for the reference parameters. Keeping the horizontal component of the load zero, we see an increase in curvature of all ten fibers as we increase $\lambda$. One explanation for this is that the torsional and extensible springs don't have enough time to slide along the top substrate and align to it. As the magnitude of the vertical component of the load is increased the fibers become more likely to buckle. 
+	
+	If we increase the horizontal component of the load the story changes. We are able to maintain the aligned compressed configuration for larger magnitudes of the load if the horizontal component is sufficiently large. It would seem that the ratio between vertical and horizontal component for the reference parameters is the deciding factor for whether or not fibers will buckle.
 
 	\begin{figure}
 		\begin{center}
@@ -37,7 +39,7 @@
 		\label{fig:grid_b100}}
 	\end{figure}
 
-	In Figure~\ref{fig:grid_b100} we increase $\beta$ to one hundred. This is an order of magnitude increase from the reference parameters and prevents any buckling at all for the loads we have selected. Qualitatively it is hard to see any difference in any of the nine simulations with the one exception that the fibers buckle to the left with no horizontal component. This bias with a load that has no horizontal component could be caused by a numerical artifact or an asymmetry in the number of atoms on the top substrate to the left of the leftmost fiber versus to the right of the rightmost fiber. Regardless of the reason the configuration itself is close enough to a reflection of the other configurations with a nonzero horizontal component that it would seem negligible.
+	In Figure~\ref{fig:grid_b100} we increase $\beta$ to one hundred. This is an order of magnitude increase from the reference parameters and it prevents buckling at all selected loads. Qualitatively there is no discernible difference in any of the nine simulations with the one exception that the fibers buckle to the left with no horizontal component of the load. This bias for the load with no horizontal component could be caused by a numerical artifact or an asymmetry in the number of atoms on the top substrate to the left of the leftmost fiber versus to the right of the rightmost fiber. Regardless of the reason, the configuration when $\mu = 0$ appears close to a mirror image of configurations for $\mu > 0$.
 	
 	\begin{figure}
 		\begin{center}
@@ -47,7 +49,7 @@
 		\label{fig:grid_g1000}}
 	\end{figure}
 	
-	Although the increase in the torsional spring strength was too much to allow for any interesting buckling to happen, an order of magnitude increase in the extensible spring constant does not seem qualitatively significant at all. Comparing Figure~\ref{fig:grid_g1000} to Figure~\ref{fig:grid} the same regime of configurations is present in both. With $\gamma$ sufficiently large and vdW sufficiently weak, all else held constant, further increasing $\gamma$ would play  a negligible effect because the distance between particles on a fiber is already close to $\ell$. It would seem, at least for our reference parameters, that this is the situation we are in when increasing $\gamma$ to 1000.
+	We observe that the increase in the torsional spring strength prevents buckling to happen anywhere except the junction between the fiber and the substrate. On the other hand when we increase the extensible spring constant by an order of magnitude the buckling patterns are the same as those observed for the reference parameters. Comparing Figure~\ref{fig:grid_g1000} to Figure~\ref{fig:grid}, the same sets of configurations are present in both. With $\gamma$ sufficiently large and vdW sufficiently weak, further increasing $\gamma$ plays a negligible role because the distance between particles on a fiber is already close to $\ell$. This confirms are choice for $\gamma$ in the reference parameters maintains extensional rigidity.
 	
 	\begin{figure}
 		\begin{center}
@@ -57,9 +59,11 @@
 		\label{fig:grid_et0.1}}
 	\end{figure}
 
-	More interestingly we can consider the asymmetry present in the vdW strengths in our reference parameters. That is, $\eps = \eps_- = 0.1$, but $\eps_+ = 1$. In Figure~\ref{fig:grid_et0.1} we reduce $\eps_+$ to 0.1 and observe the results four our small case of simulations. For $\mu = 0$ or $5$ the situation is comparable to the reference parameters although the buckling for large magnitudes of the load with sufficiently weak horizontal component is different. What is more obvious though is that the horizontal component of the load can be too strong such that it simply slides off the fibers overpowering the vdW interaction. Moreover this happens for any value of the vertical component of the load. One would guess that if the vertical component is sufficiently strong you would find yourself in a situation similar to the propagating waves in the detachment experiment of Chapter~\ref{chap:three}.
+	Next, consider the situation when all vdW strengths in the system are the same. In Figure~\ref{fig:grid_et0.1} we reduce $\eps_+$ to 0.1 and present the results for nine different loads while keeping the rest of the parameters equal to the reference values. For $\mu = 0$ or $5$ the configurations are comparable. We further observe that the horizontal component of the load can be strong enough to cause the top substrate to slide off the fibers overpowering the vdW interaction. This happens for all values of the vertical component of the load that we have considered.
 	
-	We perform the detachment experiment on a configuration of many fibers in large part as a proof of concept that the model scales up. However these play simulations do not fully demonstrate the benefit of scale you can obtain with the simplicity of the model we have presented. Ideally such a model is so simple \textit{because} you want to explore very large systems under the assumption the model will be approximately correct or insightful in some way.
+	We perform the detachment experiment on a configuration of many fibers versus one fiber in order to determine how the model scales in computational expense. However, computationally the model can be improved to obtain a better computational scaling with more particles. Ideally this model is so simple \textit{because} you want to explore very large systems under the assumption the model will be approximately correct or insightful in some way.
 
+TODO (last paragraph is a mess) + physical and time scale
+TODO (table of computation times)
 
 	
