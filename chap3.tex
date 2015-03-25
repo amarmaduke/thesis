@@ -125,7 +125,7 @@ Moving towards the y-axis we find ourselves encountering a less predictable beas
 	\end{table}
 
 	\begin{figure}
-		\begin{center}[t]
+		\begin{center}
 			\includegraphics{./fig/ch3/push/ref/grid.eps}
 		\end{center}		
 		\caption{ le $\theta$ le
@@ -136,38 +136,44 @@ Moving towards the y-axis we find ourselves encountering a less predictable beas
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push/squished.eps}
+			\includegraphics{./fig/ch3/push/ref/l5_m10.eps}
 			\caption{TODO\label{subfig:push_squished}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push/one_fold.eps}
+			\includegraphics{./fig/ch3/push/ref/l14_m10.5.eps}
 			\caption{TODO \label{subfig:push_one_fold}}
 		\end{subfigure}
 
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push/two_folds.eps}
+			\includegraphics{./fig/ch3/push/ref/l15.5_m6.eps}
+			\caption{TODO\label{subfig:push_two_folds}}
+		\end{subfigure}%
+		~
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics{./fig/ch3/push/ref/l19_m0.5.eps}
 			\caption{TODO\label{subfig:push_two_folds}}
 		\end{subfigure}
-		\caption{TODO\label{fig:push_fold}}
+		\caption{TODO\label{fig:push_ref_normal}}
 	\end{figure*}
 
 	\begin{figure*}
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push/curled1.eps}
+			\includegraphics{./fig/ch3/push/ref/l17_m11.eps}
 			\caption{TODO \label{subfig:push_curled1}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push/curled2.eps}
+			\includegraphics{./fig/ch3/push/ref/l5.9_m0.1.eps}
 			\caption{TODO\label{subfig:push_curled2}}
 		\end{subfigure}
-		\caption{TODO\label{fig:push_curled}}
+		\caption{TODO\label{fig:push_ref_special}}
 	\end{figure*}
 
 The compression of a fiber by a load is likely to cause it to buckle. We investigate here under what parameters it will buckle and how it buckles. In all simulations the fiber starts standing vertically and in equilibrium (under the equilibrium criteria described in Chapter~\ref{chap:two}). The top substrate starts a distance far enough away from the fiber so that the cut off Lennard-Jones prevents it from interacting. The experiment begins with a load on the top substrate moving it towards the fiber and bottom substrate. In every configuration we have found under this experiment there is some degree of crystallization between particles on the fiber and particles on the top substrate. Therefore we use the adhesion metric (see Equation~\ref{eqn:adhesion:top}) to differentiate between different buckling configurations. All experiments are done against a set of reference parameters (see Table~\ref{table:compression_reference}). These values have minor significance; a value is chosen to be one unless there is otherwise reason not to. The starting position and particle count for substrates are chosen so that if a fiber were to collapse under any extreme it doesn't run out of particles on either substrate to interact with. This is a guarantee for the bottom substrate based on the chosen values but the top substrate can still ``miss'' the fiber since it has only finitely many particles. Both $\gamma$ and $\beta$ were selected to keep the fiber vertical when not under load, and $\delta$ was chosen to be zero for aesthetics.
@@ -198,21 +204,27 @@ Flattened fibers occur under these parameters when the angle of the load is suff
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push_b100/low_mag.eps}
+			\includegraphics{./fig/ch3/push/b100/l4.6_m0.65.eps}
 			\caption{TODO \label{subfig:push_b100_low_mag}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push_b100/high_mag.eps}
+			\includegraphics{./fig/ch3/push/b100/l19_m0.eps}
 			\caption{TODO \label{subfig:push_b100_high_mag}}
 		\end{subfigure}
 
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push_b1000/bend.eps}
+			\includegraphics{./fig/ch3/push/b1000/l3_m2.eps}
 			\caption{TODO \label{subfig:push_b1000_bend}}
-		\end{subfigure}		
+		\end{subfigure}%
+		~	
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics{./fig/ch3/push/b1000/l20_m0.eps}
+			\caption{TODO \label{subfig:push_b1000_bend}}
+		\end{subfigure}	
 		\caption{TODO\label{fig:push_bending}}	
 	\end{figure*}
 
@@ -235,14 +247,6 @@ Increasing $\beta$ shows a shrinking region for folding fibers under any load in
 		\caption{ TODO
 		\label{fig:PushGrid:et0.1}}
 	\end{figure}
-	
-	\begin{figure}
-		\begin{center}
-			\includegraphics[scale=.4]{./fig/sims/push_et0.1/hump.eps}
-		\end{center}		
-		\caption{ TODO
-		\label{fig:push_hump}}
-	\end{figure}	
 
 	\begin{figure}[t]
 		\begin{center}
@@ -256,21 +260,27 @@ Increasing $\beta$ shows a shrinking region for folding fibers under any load in
 		\centering
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push_eb0.1_et0.1/crumple.eps}
+			\includegraphics{./fig/ch3/push/eb0.1/l20.5_m3.5.eps}
 			\caption{TODO \label{subfig:push_crumple}}
 		\end{subfigure}%
 		~
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push_eb0.1_et0.1/crumple2.eps}
+			\includegraphics{./fig/ch3/push/eb0.1_et0.1/l20_m2.eps}
 			\caption{TODO \label{subfig:push_crumple2}}
 		\end{subfigure}
 
 		\begin{subfigure}{.5\textwidth}
 			\centering
-			\includegraphics[scale=.4]{./fig/sims/push_eb0.1_et0.1/crumple3.eps}
+			\includegraphics{./fig/ch3/push/et0.1/l4.5_m1.eps}
 			\caption{TODO \label{subfig:push_crumple3}}
-		\end{subfigure}		
+		\end{subfigure}%
+		~
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics{./fig/ch3/push/et0.1/l6_m4.eps}
+			\caption{TODO \label{subfig:push_crumple3}}
+		\end{subfigure}	
 		\caption{TODO\label{fig:push_crumple}}	
 	\end{figure*}
 
@@ -330,7 +340,7 @@ After a fiber has been compressed under the load of the upper substrate, and the
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/ref/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO reference
 		\label{fig:PullGrid}}
 	\end{figure}
 
@@ -342,7 +352,7 @@ Again we have a set of reference parameters shown in Table~\ref{table:detachment
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/b10/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO b10
 		\label{fig:PullGrid:b10}}
 	\end{figure}
 	
@@ -350,7 +360,7 @@ Again we have a set of reference parameters shown in Table~\ref{table:detachment
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/b100/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO b100
 		\label{fig:PullGrid:b100}}
 	\end{figure}
 	
@@ -362,7 +372,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/eb0.1/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO eb0 dot 1
 		\label{fig:PullGrid:eb0.1}}
 	\end{figure}
 
@@ -370,7 +380,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/eb0.01/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO eb0 dot 01
 		\label{fig:PullGrid:eb0.01}}
 	\end{figure}
 	
@@ -378,7 +388,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/eb0/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO eb0
 		\label{fig:PullGrid:eb0}}
 	\end{figure}
 	
@@ -386,7 +396,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/eb0.1_et0.1/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO eb0 dot 1 et0 dot 1
 		\label{fig:PullGrid:eb0.1_et0.1}}
 	\end{figure}
 	
@@ -394,7 +404,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/eb0.1_et0.1_e0.1/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO eb0 dot 1 et0.1 e0 dot 1
 		\label{fig:PullGrid:eb0.1_et0.1_e0.1}}
 	\end{figure}
 	
@@ -402,7 +412,7 @@ We start with reference parameter that put $\beta$ at a value too small to allow
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/et10/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO et10
 		\label{fig:PullGrid:et10}}
 	\end{figure}
 
@@ -416,7 +426,7 @@ In Figure~\ref{fig:PullGrid:eb0.1_et0.1} we reduce both $\eps^-$, and $\eps^+$ b
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/g1000/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO g1000
 		\label{fig:PullGrid:g1000}}
 	\end{figure}
 
@@ -428,7 +438,7 @@ We increase $\gamma$ with the main motivation of making sure our selection of $\
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/p1/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO p1
 		\label{fig:PullGrid:p1}}
 	\end{figure}
 	
@@ -436,10 +446,18 @@ We increase $\gamma$ with the main motivation of making sure our selection of $\
 		\begin{center}
 			\includegraphics{./fig/ch3/pull/p10/grid.eps}
 		\end{center}		
-		\caption{ TODO
+		\caption{ TODO p10
 		\label{fig:PullGrid:p10}}
 	\end{figure}
 
 \subsection{Replacing Atomized Bottom Substrate with Pressure} \label{section:detachment:pressure}
 
 A modification to the system we described in Chapter~\ref{chap:two} places a continuum in place of an atomized bottom substrate. The same simulation procedure is used for two varying pressures shown in Figure~\ref{fig:PullGrid:p1} and Figure~\ref{fig:PullGrid:p10}. We can see that with small shearing component it is still increasingly difficult to detach from the fiber alone, in fact the concept of the fiber being reinforced from the bottom substrate still seems relevant. However, the continuum bottom substrate does not have the same general behavior when there is mostly only shearing component. The atomic nature of the bottom substrate in the previous examples is important in order to obtain the kind of wave behavior that we see cause local minimums.
+
+	\begin{figure}
+		\begin{center}
+			\includegraphics{./fig/ch3/pull/unzip_anim.eps}
+		\end{center}		
+		\caption{ TODO et10
+		\label{fig:PullGri}}
+	\end{figure}
