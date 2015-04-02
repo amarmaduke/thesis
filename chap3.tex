@@ -1,6 +1,10 @@
 \chapter{Single fiber simulations} \label{chap:three}
 
-We perform three numerical experiments that involve two substrates and one fiber of a reasonable length ($n=96$) in order to determine the equilibrium configurations of the substrate-fiber system. In the first experiment we study a single fiber attached to the bottom substrate. We start with a fiber perpendicular to the substrate and allow it to relax. We observe that in the absence of an external load there are two generic possibilities, either that the fiber remains free standing or that it adheres to the substrate. We consider a particle of a fiber adhered to a substrate if there exists a substrate particle such that the distance between both particles is approximately equal to that of the vdW equilibrium. Further a fiber is adhered to a substrate if at least one particle of the fiber is adhered to that substrate. In our simulations we used the following heuristic for particle adhesion, 
+We perform three numerical experiments that involve two substrates and one fiber of a reasonable length ($n=96$) in order to determine the equilibrium configurations of the substrate-fiber system. In the first experiment we study a single fiber attached to the bottom substrate. We start with a fiber perpendicular to the substrate and allow it to relax. We observe that in the absence of an external load there are two generic possibilities, either that the fiber remains free standing or that it adheres to the substrate. We consider a particle of a fiber adhered to a substrate if there exists a substrate particle such that the distance between both particles is approximately equal to that of the vdW equilibrium. A criterion for adhesion between two vectors describing particles of the system $\textbf{a}$ and $\textbf{b}$ is thus defined, 
+\begin{equation} \label{eqn:criterion}
+	$\|\textbf{a} - \textbf{b}\| \lessapprox \sigma$
+\end{equation}
+Further a fiber is adhered to a substrate if at least one particle of the fiber is adhered to that substrate. In our simulations we used the following heuristic for particle adhesion, 
 \begin{eqnarray} \label{eqn:adhesion}
 	A(\textbf{a}, \textbf{b}) &=& \left\{ 
 		\begin{array}{ll}
@@ -19,7 +23,7 @@ The third experiment we take the target equilibrium configuration obtained in th
 
 \section{The free standing fiber experiment}
 
-The model has two kinds of pairwise bonds between particles---strong and weak. Strong bonds cannot be broken and include the extensible springs between adjacent particles on a fiber and the attachment bond to the bottom substrate. Weak bonds on the other hand can be broken and correspond to vdW interaction between various particles in the system. We considered particles weakly bonded if the heuristic (\ref{eqn:adhesion}) evaluates to $0$ (TODO criterion). We already defined adhesion as a weak bond between a substrate and fiber particles. Now in addition we define crystallization as another weak bond between any two non-adjacent fiber particles satisfies the same criterion. Generally our simulations show that if any two fiber particles crystallize then other fiber particles will crystallize as well.
+The model has two kinds of pairwise bonds between particles---strong and weak. Strong bonds cannot be broken and include the extensible springs between adjacent particles on a fiber and the attachment bond to the bottom substrate. Weak bonds on the other hand can be broken and correspond to vdW interaction between various particles in the system. We considered particles weakly bonded if they satisfy the criterion (\ref{eqn:criterion). We already defined adhesion as a weak bond between a substrate and fiber particles. Now in addition we define crystallization as another weak bond between any two non-adjacent fiber particles satisfying the same criterion. Generally our simulations show that if any two fiber particles crystallize then other fiber particles will crystallize as well.
 
 	\begin{figure}[ht!]
 		\begin{center}
