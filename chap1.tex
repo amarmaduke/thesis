@@ -92,5 +92,24 @@
 	
 \section{Summary}
 
-	Adhesion between the fiber and the substrates of our model is used to categorize different equilibrium configurations. We perform parameter studies with a focus on the vertical and horizontal component of an applied load to a substrate. We discover a linear relationship between many the horizontal and vertical component of the load which delineate different classes of equilibrium configurations. The dynamics of the model are also explored. We discuss different dynamical modes of detachment for the regime of a substrate being pulled off another with a fiber between them. The modes of detachment are classified in terms of two general classes and the transitions for the different modes based of the angle of the load is discussed.
-		
+We consider a system consisting of one or more fibers constrained between two parallel substrates where one substrate is stationary, while the other substrate can move. 
+The fibers are assumed to be physically attached to the stationary substrate. 
+They can be stretched or bent and are subject to non-local self-interactions as well as van der Waals interactions with other fibers and both substrates. 
+
+In Chapter 2, we formulate a coarse-grained model of the fibers/substrates system in which the fibers are replaced by chains of discrete particles connected by extensional and torsional springs and implement this model numerically. 
+We assume that dynamics of the system is dominated by dissipative effects and thus can be described in terms of a gradient flow. 
+
+In Chapters 3 and 4, we perform a number of numerical experiments to study the adhesive properties of the fibers. 
+First, in Section 3.1, we discard the movable substrate and consider a fiber initially attached orthogonally to the stationary substrate. 
+We then determine an equilibrium configuration that results from relaxing the fiber over time. 
+We observe that the fiber can either remain free-stranding or adhere to the substrate, e.g., if the torsional springs are sufficiently weak. 
+Note that, as in all of our simulations, the equilibrium configuration corresponds to a local minimzer of the energy.
+
+In the next set of experiments in Section 3.2, we reintroduce into the system the rigid movable substrate. 
+This (top) substrate can undergo translational motion while remaining parallel to the stationary (bottom) substrate to which the fiber is attached. 
+The top substrate is assumed to interact with the fiber via van der Waals forces. Loads of various magnitudes are applied at different angles to the top substrate causing the fiber to deform and adhere to one or both substrates. 
+We analyze the set of resulting equilibrium configurations and discuss the dependence of these configurations on material parameters of the system.
+
+The compression experiment is followed by the study of the fiber detachment in Section 3.3, where the sign of the load acting on the top substrate is reversed. 
+We investigate dynamics of detachment and identify possible detachment mechanisms. 
+Finally, in Chapter~\ref{chap:four}, we present some preliminary results for a two substrate system with multiple fibers.

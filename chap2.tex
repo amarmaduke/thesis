@@ -21,8 +21,8 @@
 		$\varepsilon_-$ & & Strength of vdW force between a particle on a fiber and a particle on the bottom substrate \\
 		$\sigma$ & & Equilibrium distance between two particles for vdW \\
 		$(\mu,\lambda)$ & & Load applied to the moving substrate \\
-		$(x^{(+)}_0,y^{(+)}_0)$ & & Initial position for first particle on the top substrate \\
-		$(x^{(-)}_0,y^{(-)}_0)$ & & Initial position for first particle on the bottom substrate
+		$(x^{(+)}_1,y^{(+)}_1)$ & & Initial position for first particle on the top substrate \\
+		$(x^{(-)}_1,y^{(-)}_1)$ & & Initial position for first particle on the bottom substrate
 	\end{tabular}
 \end{table}	
 	
@@ -46,7 +46,7 @@ for the attachment particle and
 \begin{equation}
 	\textbf{r}_{-1}^{(j)} = (x_{-1}^{(j)},y_{-1}^{(j)}).
 \end{equation}
-for the floating particle.
+for the floating particle. We define the ``root'' of the fiber to be the collection of artificial particles and the initial fiber particles, i.e. the root of the $j$th fiber corresponds to the particle $i$ such that $-1 \leq i \leq 2$.
 
 	\begin{figure}[t]
 		\begin{center}
@@ -61,13 +61,13 @@ for the floating particle.
 	
 	The bottom substrate as described before is attached to every fiber at the attachment particle. We define two position vectors,
 \begin{eqnarray}
-	\textbf{r}_0^{(+)} = (x_0^{(+)},y_0^{(+)}) & \\
-	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_+,y_0^{(+)}), & 0 < i < n_+
+	\textbf{r}_1^{(+)} = (x_1^{(+)},y_1^{(+)}) & \\
+	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_+,y_0^{(+)}), & 1 < i \leq n_+
 \end{eqnarray}
 for the top substrate and,
 \begin{eqnarray}
-	\textbf{r}_0^{(-)} = (x_0^{(-)},y_0^{(-)}) & \\
-	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_-,y_0^{(+)}), & 0 < i < n_-
+	\textbf{r}_1^{(-)} = (x_1^{(-)},y_1^{(-)}) & \\
+	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_-,y_0^{(+)}), & 0 < i \leq n_-
 \end{eqnarray} 
 for the bottom substrate. Since both substrates are rigid, the bottom substrate is stationary, and the top substrate is only allowed to translate, the positions of all particles on each substrate can be respectively specified by identifying the position of a single particle. Both particles are decided as initial conditions together with the initial positions of every particle on each fiber. The rest of the particles on either substrate are defined by a parameter for the total number of particles, and an interval spacing, $\ell_+$ and $\ell_-$.
 
@@ -185,7 +185,7 @@ With all interactions in the system defined, the total energy of the system is
 
 % Total energy
 \begin{equation}
-	E = E_b + E_e + E_v + \lambda x_0^{(+)} - \mu y_0^{(+)}.
+	E = E_b + E_e + E_v + \lambda x_1^{(+)} - \mu y_1^{(+)}.
 \end{equation}
 The model for the system includes two springs, the extensible and torsional springs, the vdW interaction, and the rigid motion of the top substrate. Note that the signs for $\lambda$ and $\mu$ are selected so that positive vertical load is pointing downward, while positive horizontal load points to the right.
 
