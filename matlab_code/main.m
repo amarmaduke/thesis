@@ -19,7 +19,7 @@
 %	density := LJ substrate atom density
 %	mvSubAtoms := position of atoms on the moving substrate
 
-%{
+%%{
 m = 3 + 1;
 n = ones(1,m)*(m-1);
 n(1) = 1;
@@ -33,9 +33,6 @@ delta = -1:(m-2);
 density = 1;
 mvSubAtoms = 0:30;
 %}
-r = 63.2; theta = 143.4;
-state.lambda = -r*sin(theta*pi/180); state.mu = r*cos(theta*pi/180);
-%state.lambda = -6.727-.1; state.mu = -12.87-.1;
 mvSubIndex = 1;
 
 
@@ -45,23 +42,13 @@ nhbdRadius = 100000;
 
 %%{
 flag_IgnoreSetup = 0;
-flag_GenerateInit = 0;
+flag_GenerateInit = 1;
 flag_ContinueFromPrevious = 1 & ~flag_GenerateInit;
 flag_RedoFromSave = 0;
 flag_VisFromSave = 0;
 %}
 
-%{
-if length(delta) ~= length(n) || length(n) ~= m || m ~= length(delta)
-	error('delta, n, or m incorrect');
-end
-
-if isempty(find(n == 1, 1)) && mvSubIndex < 0
-	warninig('You seem to want a moving substrate but have not specified its index')
-end
-%}
-
-N = sum(state.n);
+N = sum(n);
 
 if flag_GenerateInit && ~flag_IgnoreSetup
 	clear('setup');
@@ -92,7 +79,7 @@ if flag_RedoFromSave || flag_VisFromSave && ~flag_IgnoreSetup
 	init = state.init;
 end
 
-%{
+%%{
 state = struct('m',m,'n',n,'N',N,'beta',beta,'len',len, ...
 					'lambda',lambda,'mu',mu,'epsi',epsi,'sigma',sigma, ...
 					'gamma',gamma,'delta',delta,'init',init, ...
@@ -105,11 +92,6 @@ for i = 1:state.N
 end
 
 options = odeset('RelTol',1e-11,'AbsTol',1e-11);
-%options = []
-
-%}
-
-%simpinit = [ init(1) init(2) init(5) init(6) ];
 
 %% Solver and Time Domain
 if ~flag_VisFromSave
@@ -118,39 +100,11 @@ state.tend = 100;
 tspan = [ 0, state.tend-3, state.tend-2, state.tend-1, state.tend];
 %tspan = 0:1:state.tend;
 startTime = cputime;
-%[ t2, y2 ] = ode45(@simpForce,tspan,init,options,state);
 [t, y] = ode15s(@forceDU,tspan,init,options,state,imap, ... 
 					checkInterval,nhbdUpdate,nhbdRadius,mvSubIndex);
-%[t2, y2] = ode45(@force,tspan,init,options,state,imap, ... 
-%					checkInterval,nhbdUpdate,nhbdRadius,mvSubIndex);
 
 endTime = cputime;
 elapsedTime = endTime - startTime;
 state.time = elapsedTime;
 
-
-%for i = 1:state.tend
-%	err = max(y(i,:)-y2(i,:));
-%	if err > 1e-6
-%		[i, err]
-%	end
-%end
-
 end
-
-%[e, b, s, sv, v] = energy(y,state,imap);
-%[e2, b, s, sv, v] = energy(y2,state,imap);
-%[e2, b2, s2, sv2] = simpEnergy(y,state);
-%close all
-%plot(t,e,'k',t,b,'r',t,s,'b',t,sv,':g',t,v,'g');
-%plot(t,e);
-%vis(t,y,state,.1,1,10)
-%vis(t2,y2,state,e2,.1)
-
-
-%y = init;
-%h = .0001;
-%for i = 0:h:1
-%	f = force(0,y,state,imap,checkInterval,nhbdUpdate,nhbdRadius,mvSubIndex);
-%	y = y + h*f';
-%end
