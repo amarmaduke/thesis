@@ -20,7 +20,7 @@
 		$\varepsilon_+$ & & Strength of vdW force between a particle on a fiber and a particle on the top substrate \\
 		$\varepsilon_-$ & & Strength of vdW force between a particle on a fiber and a particle on the bottom substrate \\
 		$\sigma$ & & Equilibrium distance between two particles for vdW \\
-		$(\mu,\lambda)$ & & Load applied to the moving substrate \\
+		$(\mu,\lambda)$ & & Load applied to the top substrate \\
 		$(x^{(+)}_1,y^{(+)}_1)$ & & Initial position for first particle on the top substrate \\
 		$(x^{(-)}_1,y^{(-)}_1)$ & & Initial position for first particle on the bottom substrate
 	\end{tabular}
@@ -46,7 +46,7 @@ for the attachment particle and
 \begin{equation}
 	\textbf{r}_{-1}^{(j)} = (x_{-1}^{(j)},y_{-1}^{(j)}).
 \end{equation}
-for the floating particle. We define the ``root'' of the fiber to be the collection of artificial particles and the initial fiber particles, i.e. the root of the $j$th fiber corresponds to the particle $i$ such that $-1 \leq i \leq 2$.
+for the floating particle. We define the ``root'' of the fiber to be the collection of artificial particles and the initial fiber particles, i.e., the root of the $j$th fiber corresponds to the particle $i$ such that $-1 \leq i \leq 2$.
 
 	\begin{figure}[t]
 		\begin{center}
@@ -59,15 +59,15 @@ for the floating particle. We define the ``root'' of the fiber to be the collect
 
 	The chain of particles is a discrete analog to a CNT (see Figure~\ref{subfig:NanotubeParticle}). Indeed, the vectors $\Delta \textbf{r}_i^{(j)}$ conceptually represent the interparticle bonds in this geometry. However, this approach is sufficiently generic to describe other fiber structures and we do not limit our discussion to this motivation.
 	
-	The bottom substrate as described before is attached to every fiber at the attachment particle. We define two position vectors,
+	The bottom substrate as described before is attached to every fiber at the attachment particle. We define the collection of position vectors
 \begin{eqnarray}
 	\textbf{r}_1^{(+)} = (x_1^{(+)},y_1^{(+)}) & \\
-	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_+,y_0^{(+)}), & 1 < i \leq n_+
+	\textbf{r}_i^{(+)} = (x_1^{(+)} + (i-1)\ell_+,y_0^{(+)}), & 1 < i \leq n_+
 \end{eqnarray}
-for the top substrate and,
+for the top substrate and
 \begin{eqnarray}
 	\textbf{r}_1^{(-)} = (x_1^{(-)},y_1^{(-)}) & \\
-	\textbf{r}_i^{(+)} = (x_0^{(+)} + i\ell_-,y_0^{(+)}), & 0 < i \leq n_-
+	\textbf{r}_i^{(-)} = (x_1^{(-)} + (i-1)\ell_-,y_0^{(-)}), & 1 < i \leq n_-
 \end{eqnarray} 
 for the bottom substrate. Since both substrates are rigid, the bottom substrate is stationary, and the top substrate is only allowed to translate, the positions of all particles on each substrate can be respectively specified by identifying the position of a single particle. Both particles are decided as initial conditions together with the initial positions of every particle on each fiber. The rest of the particles on either substrate are defined by a parameter for the total number of particles, and an interval spacing, $\ell_+$ and $\ell_-$.
 
@@ -97,7 +97,7 @@ Note that there is no spring between the floating particle and the attachment pa
 \begin{equation}
 	e_b = 2\beta \tan^2 \left( \frac{\Delta \theta}{2} \right),
 \end{equation}
-to represent the energy of a torsional spring at the junction between two bonds. Here $\beta$ is the strength of the spring. Notice this energy diverges as $\Delta \theta \to \pm180$\textdegree to guarantee that the bonds to do fold onto themselves. The geometry of the system is described in terms of particles, not angles, hence we rewrite the energy in terms of position vectors,
+to represent the energy of a torsional spring at the junction between two bonds. Here $\beta$ is the strength of the spring. Notice this energy diverges as $\Delta \theta \to \pm180$\textdegree\ to guarantee that the bonds to do fold onto themselves. The geometry of the system is described in terms of particles, not angles, hence we rewrite the energy in terms of position vectors,
 \begin{equation}
 	E_b = 2\beta \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \frac{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| - \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}}{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| + \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}} \right].
 \end{equation}
@@ -124,7 +124,7 @@ to represent the energy of a torsional spring at the junction between two bonds.
 		\caption{Lennard-Jones 12-6 potential and force with $\sigma = 1$ and $\varepsilon = 100$.\label{fig:LJ}}	
 	\end{figure*}
 
-   Van der Waals' (vdW) interaction are used to describe the sum of attractive and repulsive forces of atomic structures that are not accounted for by their covalent bonds. In a CNT setting we consider the extensible spring already described as an abstraction of covalent bonding of carbon atoms but we have yet to account for any vdW interaction. We use a truncated Lennard-Jones 12-6 potential to represent the vdW interactions between each particle in the model. The Lennard-Jones potential is parameterized by the strength of the interaction, $\varepsilon$, and the equilibrium distance between two interacting particles, $\sigma$ (see Figure~\ref{fig:LJ}). An exception is made for particles with an extensible spring between them. Stated precisely, there is vdW interaction between every particle and every other particle except if the two particles are adjacent on the same fiber.
+   Van der Waals (vdW) interaction is used to describe the sum of attractive and repulsive forces of atomic structures that are not accounted for by their covalent bonds. In a CNT setting we consider the extensible spring already described as a coarse-grained description of covalent bonding of carbon atoms but we have yet to account for any vdW interaction. We use a truncated Lennard-Jones 12-6 potential to represent the vdW interactions between each particle in the model. The Lennard-Jones potential is parameterized by the strength of the interaction, $\varepsilon$, and the equilibrium distance between two interacting particles, $\sigma$ (see Figure~\ref{fig:LJ}). An exception is made for particles with an extensible spring between them. Stated precisely, there is vdW interaction between every particle and every other particle except if the two particles are adjacent on the same fiber.
 	
 The standard Lennard-Jones potential,
 \begin{equation}
@@ -158,7 +158,7 @@ asymptotically approaches zero as $x$ approaches infinity. This makes Lennard-Jo
 		\right. 
 \end{equation}
 
-	The sequence of truncated Lennard-Jones potentials converges to the Lennard-Jones potential as $r_c \to \infty$ and the truncated Lennard-Jones potentials share the same asymptotic behavior (see Figure~\ref{fig:LJT}). This truncation technique is referred to as shifted forces, it is commonly used to conserve energy in the potential and avoid potential artifacts with a model. The discontinuous truncation is also used but can cause larger discrepancies in energy particularly with very long simulations. Although this method alters the potential everywhere the accuracy with respect to the true potential has been observed in molecular dynamics simulations as better than the discontinuous truncation \cite{Toxvaerd2011}.
+	The sequence of truncated Lennard-Jones potentials converges to the Lennard-Jones potential as $r_c \to \infty$ and the truncated Lennard-Jones potentials share the same asymptotic behavior (see Figure~\ref{fig:LJT}). This truncation technique, referred to as shifted forces, is commonly used to conserve energy in the potential and avoid potential artifacts with a model. The discontinuous truncation is also used but can cause larger discrepancies in energy particularly with very long simulations. Although this method alters the potential everywhere the accuracy with respect to the true potential has been observed in molecular dynamics simulations as better than the discontinuous truncation \cite{Toxvaerd2011}.
 	
   Time dependent simulations leading to equilibrium for large systems can require long time intervals, so to avoid artifacts in the geometry we use the continuous variation of the truncated Lennard-Jones potential. Moreover, we pick a conservative cutoff selection of $r_c = 8$ in all simulations to further ensure accuracy of equilibrium configurations.
 
@@ -179,7 +179,7 @@ It is not the case that the interaction strength is the same for each potential.
 
 \subsection{Total energy and dynamics}
 
-With both springs and vdW interaction the system of fibers and the bottom substrate is complete. What is left is the rigid motion of the top substrate. We apply a load with a vertical component, $\lambda$, and horizontal component, $\mu$, to the top substrate. Recall, that the top substrate is only allowed to undergo translational motion parallel to the bottom substrate.
+With both springs and vdW interaction the system of fibers and the bottom substrate is complete. What is left is the rigid motion of the top substrate. We apply a load with a vertical component, $\lambda$, and horizontal component, $\mu$, to the top substrate. Recall, that the top substrate is only allowed to undergo translational motion while remaining parallel to the bottom substrate.
 
 With all interactions in the system defined, the total energy of the system is
 
@@ -199,7 +199,7 @@ for the $i$th particle on the $j$th fiber, where $M$ is the mass of the particle
 \begin{equation} \label{eqn:system}
 	 \frac{d\textbf{r}_i^{(j)}}{dt} = -\nabla_{\textbf{r}_i^{(j)}}E,\ \ \ 1 \leq j \leq m,\  1 \leq i \leq n_j.
 \end{equation}
-The evolution of the physical system governed by \eqref{eqn:system} drives the energy towards a minimum.
+The evolution of the physical system governed by \eqref{eqn:system} drives the energy towards a minimum of the total energy $E$.
 
 \section{Implementation}
 
@@ -209,11 +209,11 @@ Two common optimization techniques for computing short-range forces are Verlet n
 In this work we use the Verlet neighbor list method to improve the average case evaluation of the force function.
 The Verlet neighor list method prescribes two cut off radii for every particle. 
 The first cut off, $r_c$, is for the short-range force, the force will be zero for all interactions greater than $r_c$.
-The second cut off, $r_{max}$, is for the numerical interaction, particles farther away then this cut off will not be considered in the force evaluation at all.
+The second cut off, $r_{max}$, is for the numerical computation, particles farther away then this cut off will not be computed.
 We can construct a list of neighbors based on pairwise particles whose distance is less than $r_{max}$. 
 When computing the short-range force we only need to consider the pairwise interactions stored in the neighbor list. This is still worse case $\mathcal{O}(n^2)$ interactions but in practice the neighbor list is smaller.
 In particular for our geometry the neighbor list can be much smaller because we are dealing with long fibers instead of something like particles modeling gas or a liquid.
-Updating the neighbor list requires $\mathcal{0}(n)$ computations because we need to determine the two largest displacements from the current time step and the previous time step for every particle.
+Updating the neighbor list requires $\mathcal{O}(n)$ computations because we need to determine the two largest displacements from the current time step and the previous time step for every particle.
 If the sum of the two largest displacements of the particles of the system is larger than $r_{max} - r_c$, or what is called the buffer distance, then our neighbor list is invalid and must be updated.
 Thus for every time step we have to check if the list has been invalidated, otherwise we need only use it to compute pairwise interactions of the short-range potential.
 For all simulations in this work we use $r_c = 8$ and $r_{max} = 12$.
