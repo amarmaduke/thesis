@@ -38,10 +38,10 @@
 	
 	\frame {
 		\frametitle{Coarse-grained modeling of carbon nanotubes}
-		\hspace{.25in}
-		\includegraphics[scale=.25]{./fig/ch1/Nanotube.eps}
-		\includegraphics[scale=.25]{./fig/ch1/NanotubeParticle.eps}
-		\includegraphics[scale=.25]{./fig/ch1/NanotubeCylinder.eps}
+		\centering
+		\includegraphics[scale=.20]{./fig/ch1/Nanotube.eps}
+		\includegraphics[scale=.20]{./fig/ch1/NanotubeParticle.eps}
+		\includegraphics[scale=.20]{./fig/ch1/NanotubeCylinder.eps}
 	}
 	
 	\frame {
@@ -53,14 +53,14 @@
 		\frametitle{Extensible and torsional springs}
 		
 		Extensible springs form bonds between adjacent particles of a fiber,
-		\begin{equation}
+		\begin{equation*}
 			E_e = \gamma \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \left( \|\Delta \textbf{r}_i^{(j)} \| - \ell \right)^2 \right].
-		\end{equation}
+		\end{equation*}
 		
 		Torsional springs between adjacent bonds keep particles of the fiber collinear,
-		\begin{equation}
+		\begin{equation*}
 			E_b = 2\beta \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \frac{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| - \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}}{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| + \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}} \right].
-		\end{equation}
+		\end{equation*}
 	}
 	
 	\frame {
@@ -81,25 +81,25 @@
 		\frametitle{Van der Waals interactions}		
 		The total contribution of van der Waals interactions is
 		
-		\begin{multline}
+		\begin{multline*}
 			E_v = \sum_{j=1}^m \sum_{i=1}^{n_j} \bigg[ \sum_{(h,k) \in P(j,i)} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(h)} \|; \varepsilon, \sigma \right) \\ + \sum_{k=1}^{n_-} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(-)} \|; \varepsilon_-, \sigma \right) \\ + \sum_{k=1}^{n_+} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(+)} \|; \varepsilon_+, \sigma \right) \bigg].
-		\end{multline}
+		\end{multline*}
 	}
 	
 	\frame {
 		\frametitle{Total energy and system evolution}
 		
-		The total energy of the system is the sum of energies from Equations (1-3) and a load on the top substrate,		
+		The total energy of the system is the sum of the previous energies and a load on the top substrate,		
 		
-		\begin{equation}
+		\begin{equation*}
 			E = E_b + E_e + E_v + \lambda x_1^{(+)} - \mu y_1^{(+)}.
-		\end{equation}
+		\end{equation*}
 		
 		The system evolves by dissipation-dominated dynamics,		
 		
-		\begin{equation} \label{eqn:system}
+		\begin{equation*} \label{eqn:system}
 	 		\frac{d\textbf{r}_i^{(j)}}{dt} = -\nabla_{\textbf{r}_i^{(j)}}E,\ \ \ 1 \leq j \leq m,\  1 \leq i \leq n_j.
-		\end{equation}
+		\end{equation*}
 	}
 	
 	\section{Numerical experiments}	
@@ -121,101 +121,102 @@
 	}
 	
 	\frame {
-		\frametitle{First experiment}
-		\hspace{.25in}
+		\frametitle{Free standing experiment}
+		\centering
 		\includegraphics{./fig/ch3/fs/grid.eps}	
 	}
 	
 	\frame {
-		\frametitle{First experiment}
-		\hspace{.25in}
+		\frametitle{Free standing experiment}
+		\centering
 		\includegraphics{./fig/ch3/fs/b5_eb3.eps}
 	}		
 	
 	\frame {
-		\frametitle{First experiment}
-		\hspace{.25in}
+		\frametitle{Free standing experiment}
+		\centering
 		\includegraphics{./fig/ch3/fs/b10_eb3.eps}
 	}		
 	
 	\frame {
-		\frametitle{First experiment}
-		\hspace{.25in}
+		\frametitle{Free standing experiment}
+		\centering
 		\includegraphics{./fig/ch3/fs/b0.1_eb3.eps}
 	}
 	
 	\frame {
-		\frametitle{Second experiment}
-		\hspace{.25in}
+		\frametitle{Compression experiment}
+		\centering
 		\includegraphics[scale=.75]{./fig/ch3/push/ref/grid.eps}
 	}
 	
 	\frame {
-		\frametitle{Second experiment}
-		\hspace{.25in}
+		\frametitle{Compression experiment}
+		\centering
 		\includegraphics{./fig/ch3/push/ref/l5_m10.eps}
 	}
 	
 	\frame {
-		\frametitle{Second experiment}
-		\hspace{.25in}
+		\frametitle{Compression experiment}
+		\centering
 		\includegraphics{./fig/ch3/push/ref/l19_m0.5.eps}
 	}
 
 	\frame {
-		\frametitle{Second experiment}
-		\hspace{.25in}
+		\frametitle{Compression experiment}
+		\centering
 		\includegraphics[scale=.75]{./fig/ch3/push/b100/grid.eps}
 	}
 
 	\frame {
-		\frametitle{Second experiment}
-		\hspace{.25in}
+		\frametitle{Compression experiment}
+		\centering
 		\includegraphics[scale=.75]{./fig/ch3/push/b1000/grid.eps}
 	}
 
 	\frame {
-		\frametitle{Second experiment}
-		\hspace{.25in}
+		\frametitle{Compression experiment}
+		\centering
 		\includegraphics[scale=.75]{./fig/ch3/push/eb0.1_et0.1/grid.eps}
 	}
 
 	\frame {
-		\frametitle{Third experiment}
+		\frametitle{Detachment experiment}
 		\includegraphics[scale=.75]{./fig/ch3/pull/ref/grid.eps}	
 	}
 
 	\frame {
-		\frametitle{Third experiment}
+		\frametitle{Detachment experiment}
 		\includegraphics[scale=.75]{./fig/ch3/pull/eb0.1/grid.eps}
 	}
 
 	\frame {
-		\frametitle{Third experiment}
-		\hspace{.25in}
+		\frametitle{Detachment experiment}
+		\centering
 		\includegraphics{./fig/ch3/pull/eb0.1/l0_m32.8.eps}
 	}
 
 	\frame {
-		\frametitle{Third experiment}
+		\frametitle{Detachment experiment}
 		\includegraphics[scale=.75]{./fig/ch3/pull/eb0.01/grid.eps}
 	}
 
 	\frame {
-		\frametitle{Third experiment}
-		\hspace{.25in}
+		\frametitle{Detachment experiment}
+		\centering
 		\includegraphics{./fig/ch3/pull/unzip_anim.eps}
 	}
 
 	\frame {
-		\frametitle{Third experiment}
-		\hspace{.25in}
+		\frametitle{Detachment experiment}
+		\centering
 		\includegraphics{./fig/ch3/pull/wave_anim.eps}
 	}
 	
 	\frame {
-		\frametitle{Second experiment with ten fibers}
-		\includegraphics[scale=.5]{./fig/ch4/grid.eps}	
+		\frametitle{Compression experiment with ten fibers}
+		\centering
+		\includegraphics[scale=.5]{./fig/unequal.eps}	
 	}
 	
 	\section{Conclusions}	
