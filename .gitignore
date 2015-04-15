@@ -3,6 +3,9 @@ main.ps
 main.pdf
 fig/temp_*
 code
+defense/fig
+*.DS_Store
+
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
