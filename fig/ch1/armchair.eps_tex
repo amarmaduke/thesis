@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'NanotubeParticle.eps' (pdf, eps, ps)
+%% Accompanies image file 'armchair.eps' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -20,7 +20,7 @@
 %%   \import{<path to file>}{<filename>.pdf_tex}
 %% Alternatively, one can specify
 %%   \graphicspath{{<path to file>/}}
-%% 
+%%
 %% For more information, please see info/svg-inkscape on CTAN:
 %%   http://tug.ctan.org/tex-archive/info/svg-inkscape
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{96.06737061bp}%
+    \setlength{\unitlength}{157.00001221bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,7 +48,8 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,2.36313246)%
-    \put(0,0){\includegraphics[width=\unitlength]{NanotubeParticle.eps}}%
+  \begin{picture}(1,0.56655666)%
+    \put(0,0){\includegraphics[width=\unitlength]{./fig/ch1/armchair.eps}}%
+    \put(0.93951129,0.26502608){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{T}}}%
   \end{picture}%
 \endgroup%

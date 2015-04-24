@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'NanotubeParticle.eps' (pdf, eps, ps)
+%% Accompanies image file 'chirality.eps' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -20,7 +20,7 @@
 %%   \import{<path to file>}{<filename>.pdf_tex}
 %% Alternatively, one can specify
 %%   \graphicspath{{<path to file>/}}
-%% 
+%%
 %% For more information, please see info/svg-inkscape on CTAN:
 %%   http://tug.ctan.org/tex-archive/info/svg-inkscape
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{96.06737061bp}%
+    \setlength{\unitlength}{428.00001526bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,7 +48,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,2.36313246)%
-    \put(0,0){\includegraphics[width=\unitlength]{NanotubeParticle.eps}}%
+  \begin{picture}(1,0.69819444)%
+    \put(0,0){\includegraphics[width=\unitlength]{./fig/ch1/chirality.eps}}%
+    \put(0.22092927,0.63823884){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{T}}}%
+    \put(0.16768027,0.21322437){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$a_1$}}}%
+    \put(0.12897519,0.13774955){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$a_2$}}}%
+    \put(0.42307993,0.09843059){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{armchair}}}%
+    \put(0.37467885,0.1592977){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{(n, n)}}}%
+    \put(0.71791131,0.13059941){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\mbox{C}_{\textbf{v}} = \mbox{n}a_1 + \mbox{m}a_2$}}}%
+    \put(0.71795277,0.19473072){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{(n, m)}}}%
+    \put(0.71458636,0.40023203){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{(n, 0)}}}%
+    \put(0.81577957,0.40153853){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{zigzag}}}%
   \end{picture}%
 \endgroup%
