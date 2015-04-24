@@ -41,7 +41,7 @@
 		\label{fig:grid_b100}}
 	\end{figure}
 
-	In Figure~\ref{fig:grid_b100} we increase $\beta$ to one hundred. This is an order of magnitude increase from the reference parameters and it prevents buckling at all selected loads. Qualitatively there is no discernible difference in any of the nine simulations with the one exception that the fibers buckle to the left with no horizontal component of the load. The ``crushed'' configurations of the reference parameters no longer occur similar to the single fiber situation. Although the single bend of a fiber for a single fiber only occured for $\beta=1000$ perhaps the inter-fiber vdW interaction reinforces this configuration.
+	In Figure~\ref{fig:grid_b100} we increase $\beta$ to one hundred. This is an order of magnitude increase from the reference parameters and it prevents buckling at all selected loads. Qualitatively there is no discernible difference in any of the nine simulations with the one exception that the fibers buckle to the left with no horizontal component of the load. The ``crushed'' configurations of the reference parameters no longer occur similar to the single fiber situation. Although the single bend of a fiber for one fiber only occurred for $\beta=1000$ perhaps the inter-fiber vdW interaction reinforces this configuration.
 	
 	\begin{figure}
 		\begin{center}
@@ -71,6 +71,11 @@ In Chapter~\ref{chap:three} we explored three numerical experiments.
 The compression experiment was explored briefly here, but the detachment experiment was not explored at all.
 Overcoming numerical difficulties connected to much larger sizes of the simulation for both compression and detachment is a significant issue that we have not addressed.
 Coarse-grained approaches like molecular dynamics approaches scale with parallelization very well and that could be used to evolve large scale systems over long time steps.
+GPGPU frameworks like CUDA and OpenCL with specialized hardware like that of a Tesla C2050 allow for effective parallelization of this kind.
+In particular, GPGPU solutions can be used to practically handle hundreds of thousands of particles at the same time scales presented here.
+Although a GPGPU approach will improve the computational efficiency it comes with an implementation cost.
+The use of the SUNDIALS software package in this work alleviates some of that cost by requiring only a custom N\_Vector implementation as a minimum amount of effort to use the code with a GPU.
+However, implementing a custom matrix solver would likely improve performance as well because the supplied parallel solvers of SUNDIALS do not leverage a GPUs architecture.
 All of our numerical experiments assume a set of reference parameters as a starting point for exploring equilibrium configurations.
 In Section 3.2 we note that with large torsional spring strength, $\beta = 1000$, the configurations and behavior of a single fiber is in agreement with fiber adhesion continuum models.
 However, all of our experiments use $\beta$ of smaller value which bias results to a predominantly ``sticky'' fiber.

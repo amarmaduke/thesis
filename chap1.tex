@@ -35,7 +35,7 @@
 	
 \section{Carbon-nanotubes-based materials}
 
-By Carbon-nanotubes-based based materials, we mean materials that consist entirely (except for possibly a substrate) of CNTs and no additional materials like polymers.	
+By Carbon-nanotubes-based materials, we mean materials that consist entirely (except for possibly a substrate) of CNTs and no additional materials like polymers.	
 The macroscopic properties of CNTs-based materials are dependent on several factors: purity, porosity, and alignment being a few.
 A CNT forest, turf, or array is a structure consisting of several CNTs grown from a substrate.
 One method for producing CNT forests is chemical vapor deposition.
@@ -95,7 +95,7 @@ Spitalsky et al. review several processes and discuss properties of correspondin
 
 \section{Models of buckypaper and fiber materials}
 
-	CNTs in buckypaper can be modelled as individual fibers due to their aspect ratio and flexibility. Indeed, any material consisting of a large volume of CNTs can be thought of as a fiber material. Fiber materials or films are modelled at various length scales. Molecular dynamics takes a small collection of particles and describes their motion with some governing dynamical system for a short period of time. Full atomistic simulations of fiber structures are generally speaking impractical for a large number of atoms or long time scales. For example, investigation of the heat conductance of a single CNT is a practical consideration for molecular dynamics simulations \cite{Maruyama2003}. In order to investigate longer length and time scales coarse-grained approaches are used. The exact time and length scales that are appropriate for different computational techniques are difficult to quantify. With consistently improving hardware and better algorithms and techniques to handle error propagation the line is steadily shifting. However, qualitatively, molecular dynamics approaches will always be focused on a shorter time scale and smaller systems than coarse-grained approaches which in turn are effective at smaller scales than finite element methods \cite{Muller2002}.
+	CNTs in buckypaper can be modeled as individual fibers due to their aspect ratio and flexibility. Indeed, any material consisting of a large volume of CNTs can be thought of as a fiber material. Fiber materials or films are modeled at various length scales. Molecular dynamics takes a small collection of particles and describes their motion with some governing dynamical system for a short period of time. Full atomistic simulations of fiber structures are generally speaking impractical for a large number of atoms or long time scales. For example, investigation of the heat conductance of a single CNT is a practical consideration for molecular dynamics simulations \cite{Maruyama2003}. In order to investigate longer length and time scales coarse-grained approaches are used. The exact time and length scales that are appropriate for different computational techniques are difficult to quantify. With consistently improving hardware and better algorithms and techniques to handle error propagation the line is steadily shifting. However, qualitatively, molecular dynamics approaches will always be focused on a shorter time scale and smaller systems than coarse-grained approaches which in turn are effective at smaller scales than finite element methods \cite{Muller2002}.
 	
 	Coarse-grained techniques applied to fiber materials model a collection of atoms as a single particle, encapsulating the motion of an entire fiber as a chain of linked particles, instead of a molecular structure of bonded atoms. The focus of coarse-grained simulations is on the mesoscopic scale, somewhere between 1 nanometer and 1 micrometer.  There are many variations to coarse-grained fibers: the fiber can be thought of as a single rod with an attached particle (or a ``lollipop'') \cite{Buehler2006}, a collection of bead-spring links \cite{Li2012} (see Fig.~\ref{subfig:NanotubeParticle}), or a sequence of cylinders \cite{Volkov2008} (see Fig.~\ref{subfig:NanotubeCylinder}).
 	
@@ -103,7 +103,7 @@ After a model and set of governing equations is developed, the next concern is c
 When dealing with a fiber material or mesh with hundreds of fibers, manual generation of initial data is impractical.
 Thus appropriate and careful construction of the initial configuration is a concern.
 Preventing fibers from penetrating each other and obtaining a desired volume fraction are two of the issues involved in constructing self-consistent initial data.
-Dalmas et al. modeled fibers as several splines \cite{Dalmas2006}, however there was no inner volume to each fiber due to an effective zero radius of the fibers which makes it difficult to construct a mesh of a desired volume fraction.
+Dalmas et al. modeled fibers as several splines \cite{Dalmas2006}, however there was no inner volume to each fiber due to an effective zero radius of the fibers which made it difficult to construct a mesh of a desired volume fraction.
 Altendorf and Jeulin address this issue with random walks of spheres that can shrink to ``squeeze'' through holes allowing for low porosity \cite{Altendorf2011}.
 Cranford et al. construct an array of fibers independently of the mesh and then sediment each array onto a surface \cite{Cranford2010}.
 

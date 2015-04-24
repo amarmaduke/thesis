@@ -46,7 +46,7 @@ for the attachment particle and
 \begin{equation}
 	\textbf{r}_{-1}^{(j)} = (x_{-1}^{(j)},y_{-1}^{(j)}).
 \end{equation}
-for the floating particle. We define the ``root'' of the fiber to be the collection of artificial particles and the initial fiber particles, i.e., the root of the $j$th fiber corresponds to the particle $i$ such that $-1 \leq i \leq 2$.
+for the floating particle. We define the ``root'' of the fiber to be the collection of artificial particles and the initial fiber particles, i.e., the root of the $j$th fiber corresponds to the particles $i$ such that $-1 \leq i \leq 2$.
 
 	\begin{figure}[t]
 		\begin{center}
@@ -62,12 +62,12 @@ for the floating particle. We define the ``root'' of the fiber to be the collect
 	The bottom substrate as described before is attached to every fiber at the attachment particle. We define the collection of position vectors
 \begin{eqnarray}
 	\textbf{r}_1^{(+)} = (x_1^{(+)},y_1^{(+)}) & \\
-	\textbf{r}_i^{(+)} = (x_1^{(+)} + (i-1)\ell_+,y_0^{(+)}), & 1 < i \leq n_+
+	\textbf{r}_i^{(+)} = (x_1^{(+)} + (i-1)\ell_+, y_1^{(+)}), & 1 < i \leq n_+
 \end{eqnarray}
 for the top substrate and
 \begin{eqnarray}
 	\textbf{r}_1^{(-)} = (x_1^{(-)},y_1^{(-)}) & \\
-	\textbf{r}_i^{(-)} = (x_1^{(-)} + (i-1)\ell_-,y_0^{(-)}), & 1 < i \leq n_-
+	\textbf{r}_i^{(-)} = (x_1^{(-)} + (i-1)\ell_-, y_1^{(-)}), & 1 < i \leq n_-
 \end{eqnarray} 
 for the bottom substrate. Since both substrates are rigid, the bottom substrate is stationary, and the top substrate is only allowed to translate, the positions of all particles on each substrate can be respectively specified by identifying the position of a single particle. Both particles are decided as initial conditions together with the initial positions of every particle on each fiber. The rest of the particles on either substrate are defined by a parameter for the total number of particles, and an interval spacing, $\ell_+$ and $\ell_-$.
 
@@ -81,7 +81,7 @@ for the bottom substrate. Since both substrates are rigid, the bottom substrate 
 \begin{equation}
 	E_e = \gamma \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \left( \|\Delta \textbf{r}_i^{(j)} \| - \ell \right)^2 \right].
 \end{equation}
-Note that there is no spring between the floating particle and the attachment particle, but there is a spring between the attachment particle and the $\textbf{r}_0^{(j)}$ particle on the $j$th fiber. Both the attachment particle and the floating particle are introduced into the system to model the connection between the fiber and the bottom substrate. The spring between the attachment particle, $\textbf{r}_0^{(j)}$, and the particle, $\textbf{r}_1^{(j)}$, enforces attachment of the $j$th fiber.
+Note that there is no spring between the floating particle and the attachment particle, but there is a spring between the attachment particle and the $\textbf{r}_1^{(j)}$ (or first) particle on the $j$th fiber. Both the attachment particle and the floating particle are introduced into the system to model the connection between the fiber and the bottom substrate. The spring between the attachment particle, $\textbf{r}_0^{(j)}$, and the particle, $\textbf{r}_1^{(j)}$, enforces attachment of the $j$th fiber.
 
 	\begin{figure}[t]
 		\begin{center}
@@ -102,7 +102,7 @@ to represent the energy of a torsional spring at the junction between two bonds.
 	E_b = 2\beta \sum_{j=1}^m \sum_{i=1}^{n_j} \left[ \frac{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| - \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}}{\|\Delta \textbf{r}_i^{(j)} \| \|\Delta \textbf{r}_{i-1}^{(j)} \| + \Delta \textbf{r}_i^{(j)} \cdot \Delta \textbf{r}_{i-1}^{(j)}} \right].
 \end{equation}
 
-	This energy incorporates every contiguous set of three particles, including the two artificial particles. With the incorporation of the angle between the artificial particles and the particle, $\textbf{r}_0^{(j)}$, the optimal angle of the fiber with respect to the substrate can be tuned according to the placement of the floating particle. For example, if the angle between the artificial bond connecting the floating particle to the attachment particle, and the first bond connecting the attachment particle to particle $\textbf{r}_0^{(j)}$ is $90$\textdegree, then the entire fiber will want to be upright. If the equilibrium attachment angle is $45$\textdegree, then the entire fiber will want be slanted at $45$\textdegree,~etc. 
+	This energy incorporates every contiguous set of three particles, including the two artificial particles. With the incorporation of the angle between the artificial particles and the particle, $\textbf{r}_1^{(j)}$, the optimal angle of the fiber with respect to the substrate can be tuned according to the placement of the floating particle. For example, if the angle between the artificial bond connecting the floating particle to the attachment particle, and the first bond connecting the attachment particle to particle $\textbf{r}_1^{(j)}$ is $90$\textdegree, then the entire fiber will want to be upright. If the equilibrium attachment angle is $45$\textdegree, then the entire fiber will want be slanted at $45$\textdegree,~etc. 
 
    The system of extensible and torsional springs is sufficient to model the equilibrium behavior of a system of isolated noninteracting fibers. However, we are still motivated by a nanoscale setting, namely that of CNTs. We introduce a particle-particle interaction to model the kinds of molecular forces we would expect on a nanoscale.
 
@@ -162,11 +162,11 @@ asymptotically approaches zero as $x$ approaches infinity. This makes Lennard-Jo
 	
   Time dependent simulations leading to equilibrium for large systems can require long time intervals, so to avoid artifacts in the geometry we use the continuous variation of the truncated Lennard-Jones potential. Moreover, we pick a conservative cutoff selection of $r_c = 8$ in all simulations to further ensure accuracy of equilibrium configurations.
 
-	In order to represent concisely the set of particles that a given particle is interacting with, we define the set
+	In order to represent concisely the set of fiber particles that a given particle is interacting with, we define the set
 \begin{equation}
 	P(j,i) = \{ (h,k)|j \neq h \vee k \neq i \pm 1, 1 \leq h \leq m, 1 \leq k \leq n_h \},
 \end{equation}
-which contains every particle that the $i$th particle on the $j$th fiber interacts with via the truncated 12-6 potential. Now we can express the vdW energy for the system,
+which contains every fiber particle that the $i$th particle on the $j$th fiber interacts with via the truncated 12-6 potential. Now we can express the vdW energy for the system,
 \begin{multline}
 	E_v = \sum_{j=1}^m \sum_{i=1}^{n_j} \bigg[ \sum_{(h,k) \in P(j,i)} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(h)} \|; \varepsilon, \sigma \right) \\ + \sum_{k=1}^{n_-} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(-)} \|; \varepsilon_-, \sigma \right) + \sum_{k=1}^{n_+} U_c \left( \| \textbf{r}_i^{(j)} - \textbf{r}_k^{(+)} \|; \varepsilon_+, \sigma \right) \bigg].
 \end{multline}
@@ -205,7 +205,7 @@ The evolution of the physical system governed by \eqref{eqn:system} drives the e
 
    In this section we discuss the simulation procedure utilized in Chapter~\ref{chap:three} and Chapter~\ref{chap:four} and presented in Appendix~\ref{ap:c}. We omit details of standard library algorithms and focus instead on details on nonstandard implementations of algorithms we employ.
 
-Two common optimization techniques for computing short-range forces are Verlet neighbor lists and Cell Lists.
+Two common optimization techniques for computing short-range forces are Verlet neighbor lists and cell lists.
 In this work we use the Verlet neighbor list method to improve the average case evaluation of the force function.
 The Verlet neighor list method prescribes two cut off radii for every particle. 
 The first cut off, $r_c$, is for the short-range force, the force will be zero for all interactions greater than $r_c$.
