@@ -58,8 +58,10 @@ for the floating particle. We define the ``root'' of the fiber to be the collect
 
 
 The chain of particles is a discrete analog to a CNT (see Figure~\ref{subfig:NanotubeParticle}). Indeed, the vectors $\Delta \textbf{r}_i^{(j)}$ conceptually represent the interparticle bonds in this geometry. However, this approach is sufficiently generic to describe other fiber structures and we do not limit our discussion to this motivation.
+\enlargethispage{\baselineskip}
 
 The bottom substrate as described before is attached to every fiber at the attachment particle. We define the collection of position vectors
+
 \begin{eqnarray}
 	\textbf{r}_1^{(+)} = (x_1^{(+)},y_1^{(+)}) & \\
 	\textbf{r}_i^{(+)} = (x_1^{(+)} + (i-1)\ell_+, y_1^{(+)}), & 1 < i \leq n_+
@@ -147,7 +149,8 @@ The standard Lennard-Jones potential,
 		\caption{Lennard-Jones energy and force are in black in the respective figures as reference.\label{fig:LJT}}	
 	\end{figure*}	
 
-\noindent	
+\enlargethispage{-\baselineskip}
+\noindent
 asymptotically approaches zero as $x$ approaches infinity. This makes Lennard-Jones a short range potential and, more importantly, makes interactions at long distances negligible. We can truncate (or cut) the potential at some radius $r_c$. However, this introduces a discontinuity in the potential, so in order to repair both the potential and it's derivative, we use the following modification,
 \begin{equation}
 	U_c(x; \varepsilon, \sigma) = \left\{ 
@@ -158,10 +161,8 @@ asymptotically approaches zero as $x$ approaches infinity. This makes Lennard-Jo
 		\right. 
 \end{equation}
 
-\enlargethispage{-\baselineskip}
 The sequence of truncated Lennard-Jones potentials converges to the Lennard-Jones potential as $r_c \to \infty$ and the truncated Lennard-Jones potentials share the same asymptotic behavior (see Figure~\ref{fig:LJT}). This truncation technique, referred to as shifted forces, is commonly used to conserve energy in the potential and avoid potential artifacts with a model. The discontinuous truncation is also used but can cause larger discrepancies in energy particularly with very long simulations. Although this method alters the potential everywhere the accuracy with respect to the true potential has been observed in molecular dynamics simulations as better than the discontinuous truncation \cite{Toxvaerd2011}.
 
-\enlargethispage{\baselineskip}
 Time dependent simulations leading to equilibrium for large systems can require long time intervals, so to avoid artifacts in the geometry we use the continuous variation of the truncated Lennard-Jones potential. Moreover, we pick a conservative cutoff selection of $r_c = 8$ in all simulations to further ensure accuracy of equilibrium configurations.
 
 In order to represent concisely the set of fiber particles that a given particle is interacting with, we define the set

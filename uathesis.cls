@@ -204,7 +204,7 @@
     {\texttt{$\backslash$\MakeLowercase{chair}\{\}}} command}}
 \newcommand{\@collegedean}{\@uasigline{Dean of the College}{Create with %
     {\texttt{$\backslash$\MakeLowercase{collegedean}\{\}}} command}}
-\newcommand{\@gradschdean}{\@uasigline{Dean of the Graduate School}{%
+\newcommand{\@gradschdean}{\@uasigline{Interim Dean of the Graduate School}{%
     Create with {\texttt{$\backslash$\MakeLowercase{gradschdean}\{\}}} command}}
 
 
@@ -233,7 +233,7 @@
 \newcommand{\collegedean}[1]{%
   \renewcommand{\@collegedean}{\@uasigline{Dean of the College}{#1}}}
 \newcommand{\gradschdean}[1]{%
-  \renewcommand{\@gradschdean}{\@uasigline{Dean of the Graduate School}{#1}}}
+  \renewcommand{\@gradschdean}{\@uasigline{Interim Dean of the Graduate School}{#1}}}
 
 \newif\if@coadvflag
 \@coadvflagfalse
@@ -452,7 +452,7 @@
             {\MakeUppercase{\listfigurename}}}%
   \addcontentsline{toc}{part}{\MakeUppercase{\listfigurename}}%
 \vskip -\baselineskip
-  \null Figure \hfill Page \relax \newline%
+  Figure \hfill Page \relax \newline%
   \@starttoc{lof}%
   \if@restonecol\twocolumn\fi
 }
